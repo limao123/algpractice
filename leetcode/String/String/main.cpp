@@ -13,6 +13,7 @@
 #include "ListNode.hpp"
 #include "TreeNode.hpp"
 #include "BinarySearch.hpp"
+#include "Greedy.hpp"
 using namespace std;
 
 void print(int n){
@@ -22,9 +23,14 @@ void print(int n){
 int main(int argc, const char * argv[]) {
     // insert code here...
 //    MyArray.removeElent();
-    int a[109]={1};
-    vector<int> A(a,a+1);
-    BinarySearch::searchRange(A, 1);
+    int a[109]={2,0,1,2,3,4,0};
+    int b[109]={0,1,0,0,0,0,11};
+    vector<int> A(a,a+7);
+    vector<int> B(b,b+7);
+    Greedy::canCompleteCircuit(A, B);
+    
+
+    
 //    BinarySearch::sqrt(999999999);
 //
 //    vector<vector<int> > results = MyArray::threeSum(A);
