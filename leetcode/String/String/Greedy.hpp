@@ -22,5 +22,6 @@ public:
     static int majorityNumber(vector<int> nums);
     static int canCompleteCircuit(vector<int> &gas, vector<int> &cost);
     static string largestNumber(vector<int> &num);
+    static string DeleteDigits(string A, int k);
 };
 #endif /* Greedy_hpp */

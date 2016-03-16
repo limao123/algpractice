@@ -79,6 +79,14 @@ int Greedy::canCompleteCircuit(vector<int> &gas, vector<int> &cost) {
     return -1;
 }
 
+bool compare(int a,int b){
+    return a<b; //升序排列，如果改为return a>b，则为降序
+}
+
+bool cmp(const string s1, const string s2) {
+    return (s1 + s2) < (s2 + s1);
+}
+
 /**
  *@param num: A list of non negative integers
  *@return: A string
@@ -93,7 +101,7 @@ string Greedy::largestNumber(vector<int> &num) {
         ss>>str;
         numStr.push_back(str);
     }
-    sort(numStr.begin(), numStr.end());
+    sort(numStr.begin(), numStr.end(),cmp);
     string result = "";
     
     if (numStr[numStr.size()-1] == "0") {
@@ -107,7 +115,36 @@ string Greedy::largestNumber(vector<int> &num) {
 }
 
 
-
+/**
+ *@param A: A positive integer which has N digits, A is a string.
+ *@param k: Remove k digits.
+ *@return: A string
+ */
+string Greedy::DeleteDigits(string A, int k) {
+    // wirte your code here
+    string s;
+    if (k > A.size()){
+      return s;
+    }
+    
+    int cnt = 0;
+    for (int i = 0; i < A.size(); ++i) {
+        
+        while (!s.empty() && s.back() > A[i] && cnt < k) {
+            s.pop_back();
+            ++cnt;
+        }
+        
+        if (A[i] != '0' || !s.empty()){
+            s.push_back(A[i]);
+        }
+    }
+    
+    if (cnt < k){
+        s.resize(s.size() - k + cnt);
+    }
+    return s;
+}
 
 
 

@@ -14,6 +14,7 @@
 #include "TreeNode.hpp"
 #include "BinarySearch.hpp"
 #include "Greedy.hpp"
+#include <string>
 using namespace std;
 
 void print(int n){
@@ -23,12 +24,13 @@ void print(int n){
 int main(int argc, const char * argv[]) {
     // insert code here...
 //    MyArray.removeElent();
-    int a[109]={2,0,1,2,3,4,0};
-    int b[109]={0,1,0,0,0,0,11};
-    vector<int> A(a,a+7);
-    vector<int> B(b,b+7);
-    Greedy::canCompleteCircuit(A, B);
-    
+//    int a[109]={2,0,1,2,3,4,0};
+//    int b[109]={0,1,0,0,0,0,11};
+//    vector<int> A(a,a+7);
+//    vector<int> B(b,b+7);
+//    Greedy::canCompleteCircuit(A, B);
+    string a = "178542";
+    Greedy::DeleteDigits(a, 4);
 
     
 //    BinarySearch::sqrt(999999999);
