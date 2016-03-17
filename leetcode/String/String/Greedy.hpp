@@ -23,5 +23,6 @@ public:
     static int canCompleteCircuit(vector<int> &gas, vector<int> &cost);
     static string largestNumber(vector<int> &num);
     static string DeleteDigits(string A, int k);
+    static bool canJump(vector<int> A);
 };
 #endif /* Greedy_hpp */

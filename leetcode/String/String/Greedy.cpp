@@ -146,5 +146,21 @@ string Greedy::DeleteDigits(string A, int k) {
     return s;
 }
 
+bool Greedy::canJump(vector<int> A) {
+    // write you code here
+    int tmpMax = 0;
+    for (int i = 0; i < A.size() - 1; i++)
+    {
+        if (i > tmpMax){
+            return false;
+        }
+    
+        if (tmpMax < i + A[i]){
+            tmpMax = i + A[i];
+        }
+    }
+    return true;
+}
+
 
 

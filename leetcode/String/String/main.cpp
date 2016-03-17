@@ -24,13 +24,14 @@ void print(int n){
 int main(int argc, const char * argv[]) {
     // insert code here...
 //    MyArray.removeElent();
-//    int a[109]={2,0,1,2,3,4,0};
+    int a[109]={2,3,1,1,4};
 //    int b[109]={0,1,0,0,0,0,11};
-//    vector<int> A(a,a+7);
+    vector<int> A(a,a+5);
+    Greedy::canJump(A);
 //    vector<int> B(b,b+7);
 //    Greedy::canCompleteCircuit(A, B);
-    string a = "178542";
-    Greedy::DeleteDigits(a, 4);
+//    string a = "178542";
+//    Greedy::DeleteDigits(a, 4);
 
     
 //    BinarySearch::sqrt(999999999);
