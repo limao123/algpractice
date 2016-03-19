@@ -20,6 +20,9 @@ public:
         this->val = val;
         this->next = NULL;
     }
+    
+    static void printList(ListNode *head);
+    static ListNode* creatList(int num[],int size);
 };
 
 #endif /* ListNode_hpp */

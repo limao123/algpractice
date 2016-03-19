@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		1B2AEEF81C96986200D3FCB9 /* Greedy.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 1B2AEEF61C96986200D3FCB9 /* Greedy.cpp */; };
+		1B4B8F441C9D2ED900C6A7CD /* LinkedList.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 1B4B8F421C9D2ED900C6A7CD /* LinkedList.cpp */; };
 		AB3D2FE31C56160B00000BFC /* Queue.cpp in Sources */ = {isa = PBXBuildFile; fileRef = AB3D2FE11C56160B00000BFC /* Queue.cpp */; };
 		AB6D8D121C7F499D00A860C6 /* BinarySearch.cpp in Sources */ = {isa = PBXBuildFile; fileRef = AB6D8D101C7F499D00A860C6 /* BinarySearch.cpp */; };
 		AB6E16A41C4E6FDA00DB403E /* MyArray.cpp in Sources */ = {isa = PBXBuildFile; fileRef = AB6E16A21C4E6FDA00DB403E /* MyArray.cpp */; };
@@ -36,6 +37,8 @@
 /* Begin PBXFileReference section */
 		1B2AEEF61C96986200D3FCB9 /* Greedy.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = Greedy.cpp; sourceTree = "<group>"; };
 		1B2AEEF71C96986200D3FCB9 /* Greedy.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; path = Greedy.hpp; sourceTree = "<group>"; };
+		1B4B8F421C9D2ED900C6A7CD /* LinkedList.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = LinkedList.cpp; sourceTree = "<group>"; };
+		1B4B8F431C9D2ED900C6A7CD /* LinkedList.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; path = LinkedList.hpp; sourceTree = "<group>"; };
 		AB3D2FE11C56160B00000BFC /* Queue.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = Queue.cpp; sourceTree = "<group>"; };
 		AB3D2FE21C56160B00000BFC /* Queue.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; path = Queue.hpp; sourceTree = "<group>"; };
 		AB6D8D101C7F499D00A860C6 /* BinarySearch.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = BinarySearch.cpp; sourceTree = "<group>"; };
@@ -84,6 +87,8 @@
 				ABAE19841C8A9061008C3A73 /* BinaryOperation.hpp */,
 				1B2AEEF61C96986200D3FCB9 /* Greedy.cpp */,
 				1B2AEEF71C96986200D3FCB9 /* Greedy.hpp */,
+				1B4B8F421C9D2ED900C6A7CD /* LinkedList.cpp */,
+				1B4B8F431C9D2ED900C6A7CD /* LinkedList.hpp */,
 			);
 			name = lintcode;
 			sourceTree = "<group>";
@@ -193,6 +198,7 @@
 				AB72E81E1C4CBC6F00683E98 /* main.cpp in Sources */,
 				ABAE19851C8A9061008C3A73 /* BinaryOperation.cpp in Sources */,
 				1B2AEEF81C96986200D3FCB9 /* Greedy.cpp in Sources */,
+				1B4B8F441C9D2ED900C6A7CD /* LinkedList.cpp in Sources */,
 				ABF1B7E01C8330720073BD06 /* DoublyListNode.cpp in Sources */,
 				AB8F8F8E1C8000A800877B8E /* HighQualityCode.cpp in Sources */,
 				AB99F23D1C531EBF005E8C0D /* TreeNode.cpp in Sources */,

@@ -15,19 +15,27 @@
 #include "BinarySearch.hpp"
 #include "Greedy.hpp"
 #include <string>
+#include "LinkedList.hpp"
 using namespace std;
 
 void print(int n){
     cout<<n<< endl;
 }
 
+void testLinkedList(){
+    //
+    int a[] = {1,2,3,4,5};
+    ListNode *head = ListNode::creatList(a, 5);
+    head = LinkedList::removeNthFromEnd(head, 2);
+    ListNode::printList(head);
+}
+
 int main(int argc, const char * argv[]) {
+    testLinkedList();
     // insert code here...
 //    MyArray.removeElent();
-    int a[109]={2,3,1,1,4};
+//    int a[109]={2,3,1,1,4};
 //    int b[109]={0,1,0,0,0,0,11};
-    vector<int> A(a,a+5);
-    Greedy::canJump(A);
 //    vector<int> B(b,b+7);
 //    Greedy::canCompleteCircuit(A, B);
 //    string a = "178542";
