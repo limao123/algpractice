@@ -23,11 +23,19 @@ void print(int n){
 }
 
 void testLinkedList(){
-    //
-    int a[] = {1,2,3,4,5};
-    ListNode *head = ListNode::creatList(a, 5);
-    head = LinkedList::removeNthFromEnd(head, 2);
-    ListNode::printList(head);
+    //removeNthFromEnd
+//    int a[] = {1,2,3,4,5};
+//    ListNode *head = ListNode::creatList(a, 5);
+//    head = LinkedList::removeNthFromEnd(head, 2);
+//    ListNode::printList(head);
+    
+    //mergeTwoLists
+    int a[] = {1,3,8,11,15};
+    int b[] = {2};
+    ListNode *l1 = ListNode::creatList(a, 5);
+    ListNode *l2 = ListNode::creatList(b, 1);
+    ListNode *result = LinkedList::mergeTwoLists(l1, l2);
+    ListNode::printList(result);
 }
 
 int main(int argc, const char * argv[]) {

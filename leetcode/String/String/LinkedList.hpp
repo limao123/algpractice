@@ -20,6 +20,7 @@ using namespace std;
 class LinkedList{
 public:
     static ListNode *removeNthFromEnd(ListNode *head, int n);
+    static ListNode *mergeTwoLists(ListNode *l1, ListNode *l2);
 };
 
 #endif /* LinkedList_hpp */
