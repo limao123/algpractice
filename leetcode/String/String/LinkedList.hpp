@@ -21,6 +21,8 @@ class LinkedList{
 public:
     static ListNode *removeNthFromEnd(ListNode *head, int n);
     static ListNode *mergeTwoLists(ListNode *l1, ListNode *l2);
+    static ListNode *deleteDuplicates(ListNode *head);
+    static ListNode *partition(ListNode *head, int x);
 };
 
 #endif /* LinkedList_hpp */

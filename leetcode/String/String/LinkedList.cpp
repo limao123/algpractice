@@ -93,6 +93,38 @@ ListNode *LinkedList::mergeTwoLists(ListNode *l1, ListNode *l2) {
     return head;
 }
 
+/**
+ * @param head: The first node of linked list.
+ * @return: head node
+ */
+ListNode *LinkedList::deleteDuplicates(ListNode *head) {
+    // write your code here
+    if (head == NULL || head->next == NULL) {
+        return head;
+    }
+    
+    ListNode *i1 = head;
+    ListNode *i2 = head->next;
+    while (i2 != NULL) {
+        if (i1->val == i2->val) {
+            ListNode *tmp = i2;
+            i2 = i2->next;
+            i1->next = i2;
+            free(tmp);
+        } else {
+            i1 = i2;
+            i2 = i2->next;
+        }
+    }
+    return head;
+}
 
-
+/**
+ * @param head: The first node of linked list.
+ * @param x: an integer
+ * @return: a ListNode
+ */
+ListNode *LinkedList::卢 partition(ListNode *head, int x) {
+    // write your code here
+}
 

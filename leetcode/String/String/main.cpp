@@ -30,12 +30,19 @@ void testLinkedList(){
 //    ListNode::printList(head);
     
     //mergeTwoLists
-    int a[] = {1,3,8,11,15};
-    int b[] = {2};
-    ListNode *l1 = ListNode::creatList(a, 5);
-    ListNode *l2 = ListNode::creatList(b, 1);
-    ListNode *result = LinkedList::mergeTwoLists(l1, l2);
+//    int a[] = {1,3,8,11,15};
+//    int b[] = {2};
+//    ListNode *l1 = ListNode::creatList(a, 5);
+//    ListNode *l2 = ListNode::creatList(b, 1);
+//    ListNode *result = LinkedList::mergeTwoLists(l1, l2);
+//    ListNode::printList(result);
+    
+//    deleteDuplicates
+    int a[] = {1,1,2,3,3};
+    ListNode *head = ListNode::creatList(a, 5);
+    ListNode *result = LinkedList::deleteDuplicates(head);
     ListNode::printList(result);
+    
 }
 
 int main(int argc, const char * argv[]) {
