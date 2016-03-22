@@ -38,11 +38,16 @@ void testLinkedList(){
 //    ListNode::printList(result);
     
 //    deleteDuplicates
-    int a[] = {1,1,2,3,3};
-    ListNode *head = ListNode::creatList(a, 5);
-    ListNode *result = LinkedList::deleteDuplicates(head);
-    ListNode::printList(result);
+//    int a[] = {1,1,2,3,3};
+//    ListNode *head = ListNode::creatList(a, 5);
+//    ListNode *result = LinkedList::deleteDuplicates(head);
+//    ListNode::printList(result);
     
+    //partition
+    int a[] = {3,3,1,2,4};
+    ListNode *head = ListNode::creatList(a, 5);
+    ListNode *result = LinkedList::partition(head, 3);
+    ListNode::printList(result);
 }
 
 int main(int argc, const char * argv[]) {

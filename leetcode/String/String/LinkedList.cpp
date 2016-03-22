@@ -124,7 +124,62 @@ ListNode *LinkedList::deleteDuplicates(ListNode *head) {
  * @param x: an integer
  * @return: a ListNode
  */
-ListNode *LinkedList::卢 partition(ListNode *head, int x) {
+ListNode *LinkedList::partition(ListNode *head, int x) {
     // write your code here
+    if (head == NULL || head->next == NULL) {
+        return head;
+    }
+    
+    ListNode *index; //遍历链表
+    ListNode *p; //在第一个>=x的节点之前
+    //找到头节点
+    if (head->val < x) {
+        //头节点小于x的情况
+        ListNode *tmp = head;
+        while (tmp->next != NULL && tmp->next->val < x) {
+            tmp = tmp->next;
+        }
+        
+        if (tmp ->next == NULL) {
+            return head;
+        } else {
+            p = tmp;
+            index = p->next;
+        }
+        
+    } else {
+        //头节点>=x的情况，需要找到头节点
+        ListNode *tmp = head;
+        while (tmp->next != NULL && tmp->next->val >= x) {
+            tmp = tmp->next;
+        }
+        
+        if (tmp->next == NULL) {
+            //所有节点都大于等于x
+            return head;
+        } else {
+            //找到第一个小于x的节点，取代当前头节点
+            index = tmp;
+            tmp = tmp->next;
+            index->next = tmp->next;
+            tmp->next = head;
+            p = head = tmp;
+        }
+    }
+    
+    //遍历，找到所有小于x的节点并放在正确的位置
+    while (index->next != NULL) {
+        if (index->next->val < x) {
+            ListNode *tmp = index->next;
+            index->next = tmp->next;
+            tmp->next = p->next;
+            p->next = tmp;
+            p = p->next;
+        } else {
+            index = index->next;
+        }
+    }
+    
+    return head;
 }
 
