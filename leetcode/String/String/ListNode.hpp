@@ -25,4 +25,10 @@ public:
     static ListNode* creatList(int num[],int size);
 };
 
+struct RandomListNode {
+    int label;
+    RandomListNode *next, *random;
+    RandomListNode(int x) : label(x), next(NULL), random(NULL) {}
+};
+
 #endif /* ListNode_hpp */

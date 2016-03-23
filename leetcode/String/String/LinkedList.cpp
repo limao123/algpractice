@@ -183,3 +183,39 @@ ListNode *LinkedList::partition(ListNode *head, int x) {
     return head;
 }
 
+/**
+ * @param head: the list
+ * @param k: rotate to the right k places
+ * @return: the list after rotation
+ */
+ListNode *LinkedList::rotateRight(ListNode *head, int k) {
+    // write your code here
+    if (k <= 0 || head == NULL || head->next == NULL){
+        return head;
+    }
+    
+    ListNode *index = head;
+    unsigned count = 1;
+    while (index->next != NULL) {
+        count++;
+        index = index->next;
+    }
+    
+    //注意还有一种特殊情况，就是不需要移动时的处理
+    if (k%count == 0) {
+        return head;
+    }
+    
+    unsigned move = count - (unsigned)k % count;
+    ListNode *newEnd = head;
+    
+    for (unsigned i = 1; i < move; i++) {
+        newEnd = newEnd->next;
+    }
+    
+    ListNode *newHead = newEnd->next;
+    newEnd->next = NULL;
+    index->next = head;
+    return newHead;
+}
+    

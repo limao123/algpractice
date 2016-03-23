@@ -44,9 +44,15 @@ void testLinkedList(){
 //    ListNode::printList(result);
     
     //partition
-    int a[] = {3,3,1,2,4};
+//    int a[] = {3,3,1,2,4};
+//    ListNode *head = ListNode::creatList(a, 5);
+//    ListNode *result = LinkedList::partition(head, 3);
+//    ListNode::printList(result);
+    
+//    rotateRight
+    int a[] = {1,2,3,4,5};
     ListNode *head = ListNode::creatList(a, 5);
-    ListNode *result = LinkedList::partition(head, 3);
+    ListNode *result = LinkedList::rotateRight(head, 2);
     ListNode::printList(result);
 }
 

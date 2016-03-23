@@ -23,6 +23,7 @@ public:
     static ListNode *mergeTwoLists(ListNode *l1, ListNode *l2);
     static ListNode *deleteDuplicates(ListNode *head);
     static ListNode *partition(ListNode *head, int x);
+    static ListNode *rotateRight(ListNode *head, int k);
 };
 
 #endif /* LinkedList_hpp */
