@@ -50,10 +50,16 @@ void testLinkedList(){
 //    ListNode::printList(result);
     
 //    rotateRight
-    int a[] = {1,2,3,4,5};
-    ListNode *head = ListNode::creatList(a, 5);
-    ListNode *result = LinkedList::rotateRight(head, 2);
-    ListNode::printList(result);
+//    int a[] = {1,2,3,4,5};
+//    ListNode *head = ListNode::creatList(a, 5);
+//    ListNode *result = LinkedList::rotateRight(head, 2);
+//    ListNode::printList(result);
+    
+//    copyRandomList
+    RandomListNode *head = new RandomListNode(-1);
+//    *head = node;
+//    head＝ &node;
+    LinkedList::copyRandomList(head);
 }
 
 int main(int argc, const char * argv[]) {

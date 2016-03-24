@@ -24,6 +24,7 @@ public:
     static ListNode *deleteDuplicates(ListNode *head);
     static ListNode *partition(ListNode *head, int x);
     static ListNode *rotateRight(ListNode *head, int k);
+    static RandomListNode *copyRandomList(RandomListNode *head);
 };
 
 #endif /* LinkedList_hpp */

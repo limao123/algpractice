@@ -218,4 +218,53 @@ ListNode *LinkedList::rotateRight(ListNode *head, int k) {
     index->next = head;
     return newHead;
 }
-    
+
+void insertNode(RandomListNode *head){
+    RandomListNode *node = head;
+    while (node != NULL) {
+        RandomListNode *newNode = new RandomListNode(node->label);
+        newNode->next = node->next;
+        node->next = newNode;
+        node = newNode->next;
+    }
+}
+
+void connectRandomNode(RandomListNode *head){
+    RandomListNode *node = head;
+    while(node != NULL){
+        RandomListNode *newNode;
+        newNode = node->next;
+        if(node->random != NULL){
+            newNode->random = node->random->next;
+        }
+        node = newNode->next;
+    }
+}
+
+RandomListNode *separateNode(RandomListNode *head){
+    //确定头
+    RandomListNode *newHead = head->next;
+    RandomListNode *node = newHead->next;
+    RandomListNode *newNode = newHead;
+    while (node != NULL) {
+        newNode->next = node->next;
+        newNode = newNode->next;
+        node->next = newNode->next;
+        node = node->next;
+    }
+    return newHead;
+}
+
+/**
+ * @param head: The head of linked list with a random pointer.
+ * @return: A new head of a deep copy of the list.
+ */
+RandomListNode *LinkedList::copyRandomList(RandomListNode *head) {
+    // write your code here
+    if (head == NULL) {
+        return NULL;
+    }
+    insertNode(head);
+    connectRandomNode(head);
+    return separateNode(head);
+}
