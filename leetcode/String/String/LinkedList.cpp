@@ -268,3 +268,34 @@ RandomListNode *LinkedList::copyRandomList(RandomListNode *head) {
     connectRandomNode(head);
     return separateNode(head);
 }
+
+/**
+ * @param head: The first node of linked list.
+ * @return: True if it has a cycle, or false
+ */
+bool LinkedList::hasCycle(ListNode *head) {
+    // write your code here
+    if (head == NULL || head->next == NULL) {
+        return false;
+    }
+    
+    ListNode *p = head;
+    ListNode *q = head;
+    while (p != q) {
+        p = p->next;
+        if (q != NULL && q ->next != NULL) {
+            q = q -> next -> next;
+        } else {
+            return false;
+        }
+    }
+    return true;
+}
+
+/**
+ * @param head: The first node of linked list.
+ * @return: void
+ */
+void LinkedList::reorderList(ListNode *head) {
+    // write your code here
+}

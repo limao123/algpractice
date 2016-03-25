@@ -25,6 +25,8 @@ public:
     static ListNode *partition(ListNode *head, int x);
     static ListNode *rotateRight(ListNode *head, int k);
     static RandomListNode *copyRandomList(RandomListNode *head);
+    static bool hasCycle(ListNode *head);
+    static void reorderList(ListNode *head);
 };
 
 #endif /* LinkedList_hpp */
