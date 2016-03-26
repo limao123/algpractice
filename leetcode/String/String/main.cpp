@@ -56,10 +56,16 @@ void testLinkedList(){
 //    ListNode::printList(result);
     
 //    copyRandomList
-    RandomListNode *head = new RandomListNode(-1);
-//    *head = node;
-//    head＝ &node;
-    LinkedList::copyRandomList(head);
+//    RandomListNode *head = new RandomListNode(-1);
+////    *head = node;
+////    head＝ &node;
+//    LinkedList::copyRandomList(head);
+    
+    //reorderList
+    int a[] = {0,1,2,3,4,5};
+    ListNode *head = ListNode::creatList(a, 6);
+    LinkedList::reorderList(head);
+    ListNode::printList(head);
 }
 
 int main(int argc, const char * argv[]) {

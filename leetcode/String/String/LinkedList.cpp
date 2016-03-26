@@ -298,4 +298,63 @@ bool LinkedList::hasCycle(ListNode *head) {
  */
 void LinkedList::reorderList(ListNode *head) {
     // write your code here
+    if (head == NULL || head->next == NULL) {
+        return;
+    }
+    
+    //找到链表中间位置
+    int len = 0;
+    ListNode *index = head;
+    while (index != NULL) {
+        len++;
+        index = index->next;
+    }
+    
+    int len1 = (len%2==0)?len/2:len/2+1;
+    ListNode *head1 = head;
+    ListNode *head2 = head;
+    index = head;
+    for (int i = 0; i < len1-1; i++) {
+        head2 = head2->next;
+    }
+    //此时head2已经在head1最后一个结点
+    ListNode *temp = head2;
+    head2 = head2->next;
+    temp->next = NULL;
+    
+    //反转反半部分链表
+    ListNode *newHead2;
+    if (head2->next == NULL) {
+        newHead2 = head2;
+    } else if(head2->next->next == NULL){
+        ListNode *temp = head2->next;
+        temp->next = head2;
+        head2->next = NULL;
+        newHead2 = temp;
+    } else {
+        ListNode *i1 = head2;
+        ListNode *i2 = i1->next;
+        ListNode *i3 = i2->next;
+        i1->next = NULL;
+        while (i3!=NULL) {
+            i2->next = i1;
+            i1 = i2;
+            i2 = i3;
+            i3 = i3->next;
+        }
+        i2->next = i1;
+        newHead2 = i2;
+    }
+    
+    //连接
+    ListNode *i1 = head1;
+    ListNode *i2 = newHead2;
+    while (i1 != NULL && i2 != NULL) {
+        ListNode *temp = i1;
+        i1 = i1->next;
+        temp->next = i2;
+        temp = i2;
+        i2 = i2->next;
+        temp->next = i1;
+    }
 }
