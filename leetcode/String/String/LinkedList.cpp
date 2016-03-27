@@ -7,6 +7,7 @@
 //
 
 #include "LinkedList.hpp"
+#include "TreeNode.hpp"
 
 /**
  * @param head: The first node of linked list.
@@ -357,4 +358,24 @@ void LinkedList::reorderList(ListNode *head) {
         i2 = i2->next;
         temp->next = i1;
     }
+}
+
+/**
+ * @param head: The first node of linked list.
+ * @return: a tree node
+ */
+TreeNode *sortedListToBST(ListNode *head) {
+    // write your code here
+    return NULL;
+}
+
+/**
+ * @param head: The first node of linked list.
+ * @return: You should return the head of the sorted linked list,
+ using constant space complexity.
+ */
+ListNode * LinkedList::sortList(ListNode *head) {
+    // write your code here
+    return NULL;
+    
 }

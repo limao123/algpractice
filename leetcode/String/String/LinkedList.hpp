@@ -15,6 +15,7 @@
 #include <iostream>
 #include <sstream>
 #include "ListNode.hpp"
+#include "TreeNode.hpp"
 using namespace std;
 
 class LinkedList{
@@ -27,6 +28,8 @@ public:
     static RandomListNode *copyRandomList(RandomListNode *head);
     static bool hasCycle(ListNode *head);
     static void reorderList(ListNode *head);
+    static ListNode *sortList(ListNode *head);
+    static TreeNode *sortedListToBST(ListNode *head);
 };
 
 #endif /* LinkedList_hpp */
