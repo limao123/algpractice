@@ -7,10 +7,16 @@
 //
 
 #include "Sort.hpp"
+#include "Util.hpp"
 
-void partition(int a[],int start, int end){
+
+void partition(vector<int> a,int start, int end){
+    if (start >= end) {
+        return;
+    }
+    
     int k = a[start];
-    int left = start;
+    int left = start+1;
     int right = end;
     while (left < right) {
         while (a[right] >= k && left < right) {
@@ -21,15 +27,22 @@ void partition(int a[],int start, int end){
             left++;
         }
         
-        int temp = a[left];
-        a[right] = a[left];
-        a[left] = temp;
+        if (left < right) {
+            int temp = a[left];
+            a[left] = a[right];
+            a[right] = temp;
+        }
     }
-    
-    
+    int temp = a[start];
+    a[start] = a[right];
+    a[right] = temp;
+    partition(a, start, left -1);
+    partition(a, left+1, end);
+
 }
 
-void quickSort(int a[],int length){
-    partition(a, 0, length-1);
+void quickSort(vector<int> a){
+    partition(a, 0, a.size()-1);
+        printVector(a);
 }
 
