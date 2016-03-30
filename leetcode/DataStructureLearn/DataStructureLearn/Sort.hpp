@@ -14,6 +14,6 @@
 #include <vector>
 using namespace std;
 
-void quickSort(vector<int> a);
+void quickSort(vector<int> &a);
 
 #endif /* Sort_hpp */

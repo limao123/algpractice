@@ -15,4 +15,5 @@ using namespace std;
 
 void printArray(int a[],int length);
 void printVector( vector<int> a);
+bool isVectorEqual(vector<int> a, vector<int> b);
 #endif /* Util_hpp */

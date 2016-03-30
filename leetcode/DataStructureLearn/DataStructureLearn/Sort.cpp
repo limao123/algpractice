@@ -10,39 +10,40 @@
 #include "Util.hpp"
 
 
-void partition(vector<int> a,int start, int end){
+void partition(vector<int> &a,int start, int end){
     if (start >= end) {
         return;
     }
     
-    int k = a[start];
+    int k = start;
     int left = start+1;
     int right = end;
-    while (left < right) {
-        while (a[right] >= k && left < right) {
+    while (left <= right) {
+        while (a[right] >= a[k] && left <= right) {
             right--;
         }
         
-        while (a[left] < k && left < right) {
+        while (a[left] < a[k] && left <= right) {
             left++;
         }
         
-        if (left < right) {
+        if (left <= right) {
             int temp = a[left];
             a[left] = a[right];
             a[right] = temp;
         }
     }
-    int temp = a[start];
-    a[start] = a[right];
-    a[right] = temp;
-    partition(a, start, left -1);
-    partition(a, left+1, end);
+    if (k != right) {
+        int temp = a[start];
+        a[start] = a[right];
+        a[right] = temp;
+    }
+    partition(a, start, right -1);
+    partition(a, left, end);
 
 }
 
-void quickSort(vector<int> a){
+void quickSort(vector<int> &a){
     partition(a, 0, a.size()-1);
-        printVector(a);
 }
 

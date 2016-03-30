@@ -21,3 +21,17 @@ void printVector( vector<int> a){
     }
     printf("\n");
 }
+
+bool isVectorEqual(vector<int> a, vector<int> b){
+    if (a.size() != b.size()) {
+        return false;
+    }
+    
+    for (int i = 0; i < a.size() - 1; i++) {
+        if (a[i] != b[i]) {
+            return false;
+        }
+    }
+    
+    return true;
+}
