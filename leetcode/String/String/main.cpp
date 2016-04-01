@@ -62,13 +62,31 @@ void testLinkedList(){
 //    LinkedList::copyRandomList(head);
     
     //reorderList
-    int a[] = {0,1,2,3,4,5};
-    ListNode *head = ListNode::creatList(a, 6);
-    LinkedList::reorderList(head);
-    ListNode::printList(head);
+//    int a[] = {0,1,2,3,4,5};
+//    ListNode *head = ListNode::creatList(a, 6);
+//    LinkedList::reorderList(head);
+//    ListNode::printList(head);
+}
+
+void testLinkedListSort(){
+    //sort
+    ListNode *head1 = NULL;
+    ListNode *result1 = LinkedList::sortList(head1);
+    ListNode::printList(result1);
+    
+    int listAry2[] = {1};
+    ListNode *head2 = ListNode::creatList(listAry2,1);
+    ListNode *result2 = LinkedList::sortList(head2);
+    ListNode::printList(result2);
+    
+    int listAry3[] = {1,2};
+    ListNode *head3 = ListNode::creatList(listAry3,1);
+    ListNode *result3 = LinkedList::sortList(head3);
+    ListNode::printList(result3);
 }
 
 int main(int argc, const char * argv[]) {
+//    testLinkedList();
     testLinkedList();
     // insert code here...
 //    MyArray.removeElent();

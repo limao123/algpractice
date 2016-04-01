@@ -369,6 +369,44 @@ TreeNode *sortedListToBST(ListNode *head) {
     return NULL;
 }
 
+void partition(ListNode *head){
+    if (head == NULL || head->next == NULL) {
+        return
+    }
+    
+    ListNode *slow = head;
+    ListNode *fast = head;
+    while (fast != NULL && slow != NULL){
+        while (slow->next != NULL && slow->next->val < head->val) {
+            slow = slow->next;
+        }
+        
+        if (fast == head) {
+            fast = slow->next;
+        }
+
+        while (fast != NULL && fast->val >= head->val) {
+            fast = fast->next;
+        }
+        
+        if(fast != NULL && slow ->next != NULL){
+        int tmp = slow->next->val;
+        slow->next->val = fast->val;
+        fast->val = tmp;
+        }
+    }
+    
+    if (head != slow) {
+        int tmp = slow->val;
+        slow->val = head->val;
+        head->val = tmp
+    }
+    partition(head->next);
+    partition(slow->next);
+    
+    
+}
+
 /**
  * @param head: The first node of linked list.
  * @return: You should return the head of the sorted linked list,
@@ -376,6 +414,7 @@ TreeNode *sortedListToBST(ListNode *head) {
  */
 ListNode * LinkedList::sortList(ListNode *head) {
     // write your code here
-    return NULL;
+    partition(head);
+    return head;
     
 }
