@@ -10,6 +10,7 @@
 		1B4F4FF71CA8D622008210FF /* main.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 1B4F4FF61CA8D622008210FF /* main.cpp */; };
 		1B4F4FFF1CA8D63A008210FF /* ListNode.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 1B4F4FFD1CA8D63A008210FF /* ListNode.cpp */; };
 		1B4F50021CA8D748008210FF /* Sort.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 1B4F50001CA8D748008210FF /* Sort.cpp */; };
+		1B9183271CBB795100D7CF16 /* Stack.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 1B9183251CBB795100D7CF16 /* Stack.cpp */; };
 		1BE230D01CAA273A000FDC66 /* Util.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 1BE230CE1CAA273A000FDC66 /* Util.cpp */; };
 /* End PBXBuildFile section */
 
@@ -32,6 +33,8 @@
 		1B4F4FFE1CA8D63A008210FF /* ListNode.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; path = ListNode.hpp; sourceTree = "<group>"; };
 		1B4F50001CA8D748008210FF /* Sort.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = Sort.cpp; sourceTree = "<group>"; };
 		1B4F50011CA8D748008210FF /* Sort.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; path = Sort.hpp; sourceTree = "<group>"; };
+		1B9183251CBB795100D7CF16 /* Stack.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = Stack.cpp; sourceTree = "<group>"; };
+		1B9183261CBB795100D7CF16 /* Stack.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; path = Stack.hpp; sourceTree = "<group>"; };
 		1BE230CE1CAA273A000FDC66 /* Util.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = Util.cpp; sourceTree = "<group>"; };
 		1BE230CF1CAA273A000FDC66 /* Util.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; path = Util.hpp; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -73,6 +76,8 @@
 				1B4F50011CA8D748008210FF /* Sort.hpp */,
 				1BE230CE1CAA273A000FDC66 /* Util.cpp */,
 				1BE230CF1CAA273A000FDC66 /* Util.hpp */,
+				1B9183251CBB795100D7CF16 /* Stack.cpp */,
+				1B9183261CBB795100D7CF16 /* Stack.hpp */,
 			);
 			path = DataStructureLearn;
 			sourceTree = "<group>";
@@ -133,6 +138,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				1B9183271CBB795100D7CF16 /* Stack.cpp in Sources */,
 				1B4F50021CA8D748008210FF /* Sort.cpp in Sources */,
 				1B4F4FF71CA8D622008210FF /* main.cpp in Sources */,
 				1B4F4FFF1CA8D63A008210FF /* ListNode.cpp in Sources */,
