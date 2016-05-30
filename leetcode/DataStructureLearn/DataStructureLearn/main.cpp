@@ -11,7 +11,24 @@
 #include "Util.hpp"
 #include <vector>
 #include <string>
+#include <sys/types.h>
+#include <unistd.h>
 using namespace std;
+
+
+- (void)isContain235(String s){
+    
+}
+
+int main(int argc, const char * argv[]) {
+    // insert code here...
+    int count;
+    scanf("%d",&count);
+    for (int i = 0; i < count ; i++) {
+        
+    }
+    return 0;
+}
 
 void testQuickSort(){
     vector<int> case1;
@@ -37,7 +54,7 @@ void testQuickSort(){
     vector<int> case5(caseAry5,caseAry5+4);
     quickSort(case5);
     printVector(case5);
-
+    
     
     int caseAry6[] = {4,3,2,1};
     vector<int> case6(caseAry6,caseAry6+4);
@@ -53,11 +70,5 @@ void testQuickSort(){
     vector<int> case8(caseAry8,caseAry8+6);
     quickSort(case8);
     printVector(case8);
-
-}
-
-int main(int argc, const char * argv[]) {
-    // insert code here...
-    testQuickSort();
-    return 0;
+    
 }

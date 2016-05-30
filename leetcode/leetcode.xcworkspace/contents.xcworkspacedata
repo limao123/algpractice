@@ -2,6 +2,9 @@
 <Workspace
    version = "1.0">
    <FileRef
+      location = "group:work/work.xcodeproj">
+   </FileRef>
+   <FileRef
       location = "group:DataStructureLearn/DataStructureLearn.xcodeproj">
    </FileRef>
    <FileRef
