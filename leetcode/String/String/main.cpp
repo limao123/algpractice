@@ -100,6 +100,10 @@ void testLinkedListSort(){
     ListNode::printList(result6);
 }
 
+void testSortedListToBST() {
+    
+}
+
 int main(int argc, const char * argv[]) {
 //    testLinkedList();
 //    testLinkedList();

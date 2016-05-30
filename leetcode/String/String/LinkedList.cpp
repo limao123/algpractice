@@ -418,3 +418,34 @@ ListNode * LinkedList::sortList(ListNode *head) {
     return head;
     
 }
+
+TreeNode * LinkedList::sortedListToBST(ListNode *head) {
+    // write your code here
+    if (head == NULL) {
+        return NULL;
+    }
+    
+    int len = 0;
+    ListNode *index = head;
+    while (index != NULL) {
+        len++;
+        index = index->next;
+    }
+    
+    TreeNode *tree;
+    if (len == 1) {
+        tree = new TreeNode(head->val);
+    } else {
+        index = head;
+        for (int i = 1; i < len/2; i++) {
+            index = index->next;
+        }
+        ListNode *temp = index->next;
+        index->next = NULL;
+        tree = new TreeNode(temp->val);
+        tree->left = sortedListToBST(head);
+        tree->right = sortedListToBST(temp->next);
+        free(temp);
+    }
+    return tree;
+}

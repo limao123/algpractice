@@ -21,6 +21,10 @@ public:
         this->val = val;
         this->left = this->right = NULL;
     }
+    
+    void preOrder(TreeNode *node);
+    void inOrder(TreeNode *node);
+    void postOrder(TreeNode *node);
 };
 
 
