@@ -445,7 +445,7 @@ TreeNode * LinkedList::sortedListToBST(ListNode *head) {
         tree = new TreeNode(temp->val);
         tree->left = sortedListToBST(head);
         tree->right = sortedListToBST(temp->next);
-        free(temp);
+        free(temp); 
     }
     return tree;
 }
