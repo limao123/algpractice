@@ -12,9 +12,9 @@ int isEmpty(Stack s){
     return s->next == NULL;
 }
 
-Stack createStack(){
-    
-}
+//Stack createStack(){
+//    
+//}
 
 void disposeStack(Stack s);
 void makeEmpty(Stack s);
