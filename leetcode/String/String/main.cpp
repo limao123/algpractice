@@ -98,6 +98,11 @@ void testLinkedListSort(){
     ListNode *head6 = ListNode::creatList(listAry6,6);
     ListNode *result6 = LinkedList::sortList(head6);
     ListNode::printList(result6);
+    
+    int listAry7[] = {2,-1,0};
+    ListNode *head7 = ListNode::creatList(listAry7,3);
+    ListNode *result7 = LinkedList::sortList(head7);
+    ListNode::printList(result7);
 }
 
 void testSortedListToBST() {
@@ -107,7 +112,7 @@ void testSortedListToBST() {
 int main(int argc, const char * argv[]) {
 //    testLinkedList();
 //    testLinkedList();
-    testLinkedListSort();
+//    testLinkedListSort();
     // insert code here...
 //    MyArray.removeElent();
 //    int a[109]={2,3,1,1,4};
@@ -152,6 +157,6 @@ int main(int argc, const char * argv[]) {
 //    TreeNode *treeNode = BaseKnowledge::buildTree(pre, pre);
 //    cout << treeNode << endl;
     
-    
+    testLinkedListSort();
     return 0;
 }

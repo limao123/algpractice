@@ -390,9 +390,9 @@ void partition(ListNode *head){
         }
         
         if(fast != NULL && slow ->next != NULL){
-        int tmp = slow->next->val;
-        slow->next->val = fast->val;
-        fast->val = tmp;
+            int tmp = slow->next->val;
+            slow->next->val = fast->val;
+            fast->val = tmp;
         }
     }
     
