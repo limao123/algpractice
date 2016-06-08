@@ -369,40 +369,41 @@ TreeNode *sortedListToBST(ListNode *head) {
     return NULL;
 }
 
-void partition(ListNode *head){
-    if (head == NULL || head->next == NULL) {
+void partition(ListNode *start,ListNode *end){
+    if (start == NULL || start->next == NULL || start == end || start -> next == end) {
         return;
     }
     
-    ListNode *slow = head;
-    ListNode *fast = head;
-    while (fast != NULL && slow != NULL){
-        while (slow->next != NULL && slow->next->val < head->val) {
+    ListNode *slow = start;
+    ListNode *fast = start;
+    while (fast != end && slow != end){
+        while (slow->next != end && slow->next->val < start->val) {
             slow = slow->next;
         }
         
-        if (fast == head) {
+        if (fast == start) {
             fast = slow->next;
         }
 
-        while (fast != NULL && fast->val >= head->val) {
+        while (fast != end && fast->val >= start->val) {
             fast = fast->next;
         }
         
-        if(fast != NULL && slow ->next != NULL){
+        if(fast != end && slow ->next != end){
             int tmp = slow->next->val;
             slow->next->val = fast->val;
             fast->val = tmp;
         }
     }
     
-    if (head != slow) {
+    if (start != slow) {
         int tmp = slow->val;
-        slow->val = head->val;
-        head->val = tmp;
+        slow->val = start->val;
+        start->val = tmp;
     }
-    partition(head->next);
-    partition(slow->next);
+    
+    partition(start,slow);
+    partition(slow->next,NULL);
     
     
 }
@@ -414,7 +415,7 @@ void partition(ListNode *head){
  */
 ListNode * LinkedList::sortList(ListNode *head) {
     // write your code here
-    ::partition(head);
+    ::partition(head,NULL);
     return head;
     
 }
