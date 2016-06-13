@@ -39,7 +39,7 @@ static bool isBalanced(TreeNode *root) {
     }
     // write your code here
     if (abs(maxDepth(root->right)-maxDepth(root->left)) <= 1) {
-        return true;
+        return isBalanced(root->right) && isBalanced(root->left);
     } else {
         return false;
     }
