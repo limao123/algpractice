@@ -8,6 +8,8 @@
 
 #include "BinaryTree.hpp"
 #include <stdlib.h>
+#include <vector>
+using namespace std;
 
 
 /**
@@ -44,3 +46,56 @@ static bool isBalanced(TreeNode *root) {
         return false;
     }
 }
+
+/**
+ * @param root: The root of the binary search tree.
+ * @param node: insert this node into the binary search tree
+ * @return: The root of the new binary search tree.
+ */
+static TreeNode* insertNode(TreeNode* root, TreeNode* node) {
+    // write your code here
+    if (root == NULL) {
+        return node;
+    }
+    
+    if (node->val < root->val) {
+        if (root->left != NULL) {
+            insertNode(root->left, node);
+        } else {
+            root->left = node;
+        }
+    } else {
+        if (root->right != NULL) {
+            insertNode(root->right, node);
+        } else {
+            root->right = node;
+        }
+    }
+    return root;
+}
+
+void preorderTraversal(TreeNode *root,vector<int> &vector){
+    if (root == NULL) {
+        return;
+    }
+    
+    vector.push_back(root->val);
+    preorderTraversal(root->left, vector);
+    preorderTraversal(root->right, vector);
+}
+
+/**
+ * @param root: The root of binary tree.
+ * @return: Preorder in vector which contains node values.
+ */
+static vector<int> preorderTraversal(TreeNode *root) {
+    // write your code here
+    vector<int> result;
+    preorderTraversal(root, result);
+    return result;
+}
+
+
+
+
+
