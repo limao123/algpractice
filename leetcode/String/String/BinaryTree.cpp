@@ -96,6 +96,26 @@ static vector<int> preorderTraversal(TreeNode *root) {
 }
 
 
-
+/**
+ * @param root: The root of binary tree.
+ * @return: True if the binary tree is BST, or false
+ */
+static bool isValidBST(TreeNode *root) {
+    // write your code here
+//    if ((root == NULL) ||
+//        ((root->left == NULL) && (root->right == NULL))) {
+//        return true;
+//    }
+//    
+//    if ((root->left == NULL) && (root->val < root->right->val)) {
+//        return isValidBST(root->right);
+//    } else if (root->right == NULL && root->val > root->left->val){
+//        return isValidBST(root->left);
+//    } else if (root->val > root->left->val && root->val < root->right->val){
+//        return isValidBST(root->left) && isValidBST(root->right);
+//    } else {
+//        return false;
+//    }
+}
 
 

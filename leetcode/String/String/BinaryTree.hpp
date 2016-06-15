@@ -16,4 +16,5 @@ static int maxDepth(TreeNode *root);
 static bool isBalanced(TreeNode *root);
 static TreeNode* insertNode(TreeNode* root, TreeNode* node);
 static vector<int> preorderTraversal(TreeNode *root);
+static bool isValidBST(TreeNode *root);
 #endif /* BinaryTree_hpp */
