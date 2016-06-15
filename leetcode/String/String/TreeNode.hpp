@@ -10,6 +10,11 @@
 #define TreeNode_hpp
 
 #include <stdio.h>
+#include <string>
+#include <queue>
+#include <vector>
+#include <cstdlib>
+using namespace std;
 
 
 //Definition of TreeNode:
@@ -25,6 +30,8 @@ public:
     void preOrder(TreeNode *node);
     void inOrder(TreeNode *node);
     void postOrder(TreeNode *node);
+    static string serialize(TreeNode *root);
+    static TreeNode * deserialize(string data);
 };
 
 

@@ -11,10 +11,15 @@
 
 #include <stdio.h>
 #include "TreeNode.hpp"
-
-static int maxDepth(TreeNode *root);
-static bool isBalanced(TreeNode *root);
-static TreeNode* insertNode(TreeNode* root, TreeNode* node);
-static vector<int> preorderTraversal(TreeNode *root);
-static bool isValidBST(TreeNode *root);
+#include <stdlib.h>
+#include <vector>
+#include <queue>
+using namespace std;
+int maxDepth(TreeNode *root);
+bool isBalanced(TreeNode *root);
+TreeNode* insertNode(TreeNode* root, TreeNode* node);
+vector<int> preorderTraversal(TreeNode *root);
+bool isValidBST(TreeNode *root);
+vector<vector<int>> levelOrder(TreeNode *root);
+vector<int> searchRange(TreeNode* root, int k1, int k2);
 #endif /* BinaryTree_hpp */

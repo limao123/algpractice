@@ -16,6 +16,7 @@
 #include "Greedy.hpp"
 #include <string>
 #include "LinkedList.hpp"
+#include "BinaryTree.hpp"
 using namespace std;
 
 void print(int n){
@@ -109,6 +110,27 @@ void testSortedListToBST() {
     
 }
 
+void testLevelOrder() {
+    TreeNode *root = new TreeNode(1);
+    root->left = new TreeNode(2);
+    root->right = new TreeNode(3);
+    vector<vector<int>> result = levelOrder(root);
+}
+
+void testSearchRange() {
+    TreeNode *root = new TreeNode(20);
+    root->left = new TreeNode(8);
+    root->right = new TreeNode(22);
+    root->left->left = new TreeNode(4);
+    root->left->right = new TreeNode(12);
+    vector<int> result = searchRange(root, 10, 22);
+}
+
+void testSerialize() {
+    TreeNode *root = TreeNode::deserialize("{3,9,20,#,#,15,7}");
+    string data = TreeNode::serialize(root);
+}
+
 int main(int argc, const char * argv[]) {
 //    testLinkedList();
 //    testLinkedList();
@@ -157,6 +179,9 @@ int main(int argc, const char * argv[]) {
 //    TreeNode *treeNode = BaseKnowledge::buildTree(pre, pre);
 //    cout << treeNode << endl;
     
-    testLinkedListSort();
+//    testLinkedListSort();
+//    testLevelOrder();
+//    testSearchRange();
+    testSerialize();
     return 0;
 }
