@@ -181,3 +181,49 @@ vector<int> searchRange(TreeNode* root, int k1, int k2) {
     searchRange(root, k1, k2,result);
     return result;
 }
+
+TreeNode* removeNode(TreeNode* root, int value) {
+    // write your code here
+    if (root == NULL) {
+        return root;
+    }
+    
+    if (value == root->val) {
+        //处理节点
+        if (root->left == NULL && root->right == NULL) {
+            return NULL;
+        } else if (root->left != NULL && root->right == NULL){
+            TreeNode *tmp = root;
+            root = tmp->left;
+            free(tmp);
+        } else if (root->left == NULL && root->right != NULL){
+            TreeNode *tmp = root;
+            root = tmp->right;
+            free(tmp);
+        } else {
+            //这种情况返回左右都可以
+            //返回左，则把右节点放在左节点最下一层的最右
+            TreeNode *tmp = root;
+            root = tmp->left;
+            TreeNode *p_newRight = root;
+            while (p_newRight->right != NULL) {
+                p_newRight = p_newRight->right;
+            }
+            p_newRight->right = tmp->right;
+            free(tmp);
+            
+            //返回右，则把左节点放在右节点最下一层的最左
+        }
+        
+    } else if (value < root-> val){
+        root->left = removeNode(root->left, value);
+    } else if (value > root-> val) {
+        root->right = removeNode(root->right, value);
+    }
+    return root;
+}
+
+
+
+
+
