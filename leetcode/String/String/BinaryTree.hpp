@@ -20,6 +20,9 @@ using namespace std;
 int maxDepth(TreeNode *root);
 void testMaxDepth();
 
+
+void testMinDepth();
+
 bool isBalanced(TreeNode *root);
 TreeNode* insertNode(TreeNode* root, TreeNode* node);
 vector<int> preorderTraversal(TreeNode *root);

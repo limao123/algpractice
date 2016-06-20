@@ -9,7 +9,55 @@
 #include "BinaryTree.hpp"
 #include "LTTest.hpp"
 
+int minDepth(TreeNode *root) {
+    if (root == NULL) {
+        return 0;
+    }
+    
+    if (root->left == NULL && root->right == NULL) {
+        return 1;
+    }
+    
+    int minDepthOfLeft = minDepth(root->left);
+    if (minDepthOfLeft == 0) {
+        minDepthOfLeft = INT_MAX;
+    }
+    
+    int minDepthOfRight = minDepth(root->right);
+    if (minDepthOfRight == 0) {
+        minDepthOfRight = INT_MAX;
+    }
+    
+    if (minDepthOfLeft < minDepthOfRight) {
+        return minDepthOfLeft + 1;
+    } else {
+        return minDepthOfRight + 1;
+    }
+}
 
+void testMinDepth() {
+    printf("test minDepth begin--------------------------------------------\n");
+    TreeNode *nullTree = TreeNode::deserialize("{}");
+    int depth1 = minDepth(nullTree);
+    LTTest(0, depth1);
+    
+    TreeNode *oneTree = TreeNode::deserialize("{1}");
+    int depth2 = minDepth(oneTree);
+    LTTest(1, depth2);
+    
+    TreeNode *twoTree = TreeNode::deserialize("{1,2,3}");
+    int depth3 = minDepth(twoTree);
+    LTTest(2, depth3);
+    
+    TreeNode *leftTree = TreeNode::deserialize("{1,2,3,4,#,#,#,5}");
+    int depth4 = minDepth(leftTree);
+    LTTest(2, depth4);
+    
+    TreeNode *rightTree = TreeNode::deserialize("{1,2,3,#,#,#,4,#,5}");
+    int depth5 = minDepth(rightTree);
+    LTTest(2, depth5);
+    printf("test minDepth end----------------------------------------------\n");
+}
 
 /**
  * @param root: The root of binary tree.
@@ -17,6 +65,8 @@
  */
 int maxDepth(TreeNode *root) {
     // write your code here
+
+    
     if (root == NULL) {
         return 0;
     }
@@ -32,9 +82,11 @@ int maxDepth(TreeNode *root) {
     } else {
         return depthOfRight + 1;
     }
+
 }
 
 void testMaxDepth(){
+    printf("test maxDepth begin--------------------------------------------\n");
     TreeNode *nullTree = TreeNode::deserialize("{}");
     int depth1 = maxDepth(nullTree);
     LTTest(0, depth1);
@@ -42,6 +94,20 @@ void testMaxDepth(){
     TreeNode *oneTree = TreeNode::deserialize("{1}");
     int depth2 = maxDepth(oneTree);
     LTTest(1, depth2);
+    
+    TreeNode *twoTree = TreeNode::deserialize("{1,2,3}");
+    int depth3 = maxDepth(twoTree);
+    LTTest(2, depth3);
+    
+    TreeNode *leftTree = TreeNode::deserialize("{1,2,#,3,#,4}");
+    int depth4 = maxDepth(leftTree);
+    LTTest(4, depth4);
+    
+    TreeNode *rightTree = TreeNode::deserialize("{1,#,2,#,3,#,4}");
+    int depth5 = maxDepth(rightTree);
+    LTTest(4, depth5);
+    
+    printf("test maxDepth end----------------------------------------------\n");
 }
 
 

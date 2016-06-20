@@ -184,5 +184,6 @@ int main(int argc, const char * argv[]) {
 //    testSearchRange();
 //    testSerialize();
     testMaxDepth();
+    testMinDepth();
     return 0;
 }
