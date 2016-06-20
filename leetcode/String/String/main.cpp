@@ -182,6 +182,7 @@ int main(int argc, const char * argv[]) {
 //    testLinkedListSort();
 //    testLevelOrder();
 //    testSearchRange();
-    testSerialize();
+//    testSerialize();
+    testMaxDepth();
     return 0;
 }

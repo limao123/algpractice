@@ -7,6 +7,7 @@
 //
 
 #include "BinaryTree.hpp"
+#include "LTTest.hpp"
 
 
 
@@ -32,6 +33,17 @@ int maxDepth(TreeNode *root) {
         return depthOfRight + 1;
     }
 }
+
+void testMaxDepth(){
+    TreeNode *nullTree = TreeNode::deserialize("{}");
+    int depth1 = maxDepth(nullTree);
+    LTTest(0, depth1);
+    
+    TreeNode *oneTree = TreeNode::deserialize("{1}");
+    int depth2 = maxDepth(oneTree);
+    LTTest(1, depth2);
+}
+
 
 bool isBalanced(TreeNode *root) {
     if (root == NULL) {
