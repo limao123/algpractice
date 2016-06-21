@@ -19,6 +19,7 @@ using namespace std;
 
 //Definition of TreeNode:
 class TreeNode {
+    
 public:
     int val;
     TreeNode *left, *right;
@@ -32,7 +33,7 @@ public:
     void postOrder(TreeNode *node);
     static string serialize(TreeNode *root);
     static TreeNode * deserialize(string data);
-};
 
+};
 
 #endif /* TreeNode_hpp */

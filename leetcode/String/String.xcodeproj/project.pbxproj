@@ -80,6 +80,13 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		1B3B4BC71D1913A90076E6CC /* BinaryTree */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = BinaryTree;
+			sourceTree = "<group>";
+		};
 		1B647AEF1D17B2F000C7DFF0 /* TestFramework */ = {
 			isa = PBXGroup;
 			children = (
@@ -92,6 +99,7 @@
 		AB4B7B621C4FB34E0003055B /* lintcode */ = {
 			isa = PBXGroup;
 			children = (
+				1B3B4BC71D1913A90076E6CC /* BinaryTree */,
 				AB72E8241C4CBC9400683E98 /* SwapString.cpp */,
 				AB72E8251C4CBC9400683E98 /* SwapString.hpp */,
 				AB6E16A21C4E6FDA00DB403E /* MyArray.cpp */,

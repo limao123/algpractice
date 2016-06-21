@@ -9,6 +9,14 @@
 #include "BinaryTree.hpp"
 #include "LTTest.hpp"
 
+
+/**
+ *  二叉树的最小深度，时间复杂度:O(n) 空间复杂度O(n)
+ *
+ *  @param root 所求二叉树根节点
+ *
+ *  @return 所求二叉树最小深度
+ */
 int minDepth(TreeNode *root) {
     if (root == NULL) {
         return 0;
@@ -60,8 +68,11 @@ void testMinDepth() {
 }
 
 /**
- * @param root: The root of binary tree.
- * @return: An integer
+ *  计算二叉树的最大深度，时间复杂度:O(n) 空间复杂度O(n)
+ *
+ *  @param root 计算的二叉树的根节点
+ *
+ *  @return 最大深度
  */
 int maxDepth(TreeNode *root) {
     // write your code here
@@ -110,7 +121,13 @@ void testMaxDepth(){
     printf("test maxDepth end----------------------------------------------\n");
 }
 
-
+/**
+ *  给定一个二叉树,确定它是高度平衡的。对于这个问题,一棵高度平衡的二叉树的定义是：一棵二叉树中每个节点的两个子树的深度相差不会超过1。
+ *
+ *  @param root 需要判断的二叉树
+ *
+ *  @return 平衡返回true
+ */
 bool isBalanced(TreeNode *root) {
     if (root == NULL) {
         return true;
