@@ -8,20 +8,32 @@
 
 #include "TreeNode.hpp"
 #include <iostream>
+#include <stdio.h>
+#include <sstream>
 using namespace std;
 
-void TreeNode::preOrder(TreeNode *node){
+void preOrder(TreeNode *node,stringstream &result){
     if (node == NULL) {
         return;
     }
-    cout << node->val << " ";
+//    stringstream os;
+    result << node->val << " ";
+//    result.append(os.str());
+    
+//    valStr
+//    sprintf(valStr, "%d ",node->val);
+//    result.append(valStr);
     preOrder(node->left);
     preOrder(node->right);
     
 }
 
+void testPreOrder(){
+    
+}
 
-void TreeNode::inOrder(TreeNode *node){
+
+void inOrder(TreeNode *node){
     if (node == NULL) {
         return;
     }
@@ -30,7 +42,7 @@ void TreeNode::inOrder(TreeNode *node){
     inOrder(node->right);
 }
 
-void TreeNode::postOrder(TreeNode *node){
+void postOrder(TreeNode *node){
     if (node == NULL) {
         return;
     }
@@ -45,7 +57,7 @@ void TreeNode::postOrder(TreeNode *node){
  * to serialize a binary tree which denote by a root node to a string which
  * can be easily deserialized by your own "deserialize" method later.
  */
-string TreeNode::serialize(TreeNode *root) {
+string serialize(TreeNode *root) {
     // write your code here
     if (root == NULL) {
         return "{}";
@@ -126,7 +138,7 @@ int split(const string& str, vector<string>& ret_, string sep = ",")
  * designed by yourself, and deserialize it here as you serialize it in
  * "serialize" method.
  */
-TreeNode * TreeNode::deserialize(string data) {
+TreeNode * deserialize(string data) {
     // write your code here
     if (data.compare("{}") == 0) {
         return NULL;

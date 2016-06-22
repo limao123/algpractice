@@ -83,6 +83,8 @@
 		1B3B4BC71D1913A90076E6CC /* BinaryTree */ = {
 			isa = PBXGroup;
 			children = (
+				AB99F23B1C531EBF005E8C0D /* TreeNode.cpp */,
+				AB99F23C1C531EBF005E8C0D /* TreeNode.hpp */,
 			);
 			name = BinaryTree;
 			sourceTree = "<group>";
@@ -125,8 +127,6 @@
 				AB99F2361C5221D6005E8C0D /* BaseKnowledge.hpp */,
 				AB99F2381C525AC8005E8C0D /* ListNode.cpp */,
 				AB99F2391C525AC8005E8C0D /* ListNode.hpp */,
-				AB99F23B1C531EBF005E8C0D /* TreeNode.cpp */,
-				AB99F23C1C531EBF005E8C0D /* TreeNode.hpp */,
 				AB3D2FE11C56160B00000BFC /* Queue.cpp */,
 				AB3D2FE21C56160B00000BFC /* Queue.hpp */,
 				AB8F8F8C1C8000A800877B8E /* HighQualityCode.cpp */,

@@ -27,13 +27,12 @@ public:
         this->val = val;
         this->left = this->right = NULL;
     }
-    
-    void preOrder(TreeNode *node);
-    void inOrder(TreeNode *node);
-    void postOrder(TreeNode *node);
-    static string serialize(TreeNode *root);
-    static TreeNode * deserialize(string data);
-
 };
+
+void preOrder(TreeNode *node);
+void inOrder(TreeNode *node);
+void postOrder(TreeNode *node);
+static string serialize(TreeNode *root);
+static TreeNode * deserialize(string data);
 
 #endif /* TreeNode_hpp */
