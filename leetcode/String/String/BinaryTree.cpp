@@ -123,18 +123,11 @@ void testMaxDepth(){
 }
 
 /**
- *  给定一个二叉树,确定它是高度平衡的。对于这个问题,一棵高度平衡的二叉树的定义是：一棵二叉树中每个节点的两个子树的深度相差不会超过1。
+ *  给定一个二叉树,确定它是高度平衡的。对于这个问题,一棵高度平衡的二叉树的定义是：一棵二叉树中每个节点的两个子树的深度相差不会超过1。时间复杂度O(n) 空间复杂度O(n)
  *
  *  @param root 需要判断的二叉树
  *
  *  @return 平衡返回true
- 
- 
- 
- 
- 
- 
- 
  */
 bool isBalanced(TreeNode *root) {
     if (root == NULL) {
@@ -146,6 +139,25 @@ bool isBalanced(TreeNode *root) {
     } else {
         return false;
     }
+}
+
+void testIsBalanced() {
+    printf("test isBalanced begin------------------------------------------\n");
+    TreeNode *nullTree = deserialize("{}");
+    LTTestBool(true, isBalanced(nullTree));
+    
+    TreeNode *oneTree = deserialize("{1}");
+    LTTestBool(true, isBalanced(oneTree));
+    
+    TreeNode *oneLeftTree = deserialize("{1,2}");
+    LTTestBool(true, isBalanced(oneLeftTree));
+    
+    TreeNode *oneRightTree = deserialize("{1,#,2}");
+    LTTestBool(true, isBalanced(oneRightTree));
+    
+    TreeNode *leftThreeTree = deserialize("{1,2,#,3}");
+    LTTestBool(false, isBalanced(leftThreeTree));
+    printf("test isBalanced end--------------------------------------------\n");
 }
 
 /**

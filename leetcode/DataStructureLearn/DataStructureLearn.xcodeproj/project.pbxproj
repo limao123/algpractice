@@ -12,6 +12,7 @@
 		1B4F50021CA8D748008210FF /* Sort.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 1B4F50001CA8D748008210FF /* Sort.cpp */; };
 		1B9183271CBB795100D7CF16 /* Stack.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 1B9183251CBB795100D7CF16 /* Stack.cpp */; };
 		1BE230D01CAA273A000FDC66 /* Util.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 1BE230CE1CAA273A000FDC66 /* Util.cpp */; };
+		AB8D0D621D1C293500BF02A9 /* TreeNode.cpp in Sources */ = {isa = PBXBuildFile; fileRef = AB8D0D601D1C293500BF02A9 /* TreeNode.cpp */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXCopyFilesBuildPhase section */
@@ -37,6 +38,8 @@
 		1B9183261CBB795100D7CF16 /* Stack.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; path = Stack.hpp; sourceTree = "<group>"; };
 		1BE230CE1CAA273A000FDC66 /* Util.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = Util.cpp; sourceTree = "<group>"; };
 		1BE230CF1CAA273A000FDC66 /* Util.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; path = Util.hpp; sourceTree = "<group>"; };
+		AB8D0D601D1C293500BF02A9 /* TreeNode.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = TreeNode.cpp; sourceTree = "<group>"; };
+		AB8D0D611D1C293500BF02A9 /* TreeNode.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; path = TreeNode.hpp; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -70,6 +73,8 @@
 			isa = PBXGroup;
 			children = (
 				1B4F4FF61CA8D622008210FF /* main.cpp */,
+				AB8D0D601D1C293500BF02A9 /* TreeNode.cpp */,
+				AB8D0D611D1C293500BF02A9 /* TreeNode.hpp */,
 				1B4F4FFD1CA8D63A008210FF /* ListNode.cpp */,
 				1B4F4FFE1CA8D63A008210FF /* ListNode.hpp */,
 				1B4F50001CA8D748008210FF /* Sort.cpp */,
@@ -139,6 +144,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				1B9183271CBB795100D7CF16 /* Stack.cpp in Sources */,
+				AB8D0D621D1C293500BF02A9 /* TreeNode.cpp in Sources */,
 				1B4F50021CA8D748008210FF /* Sort.cpp in Sources */,
 				1B4F4FF71CA8D622008210FF /* main.cpp in Sources */,
 				1B4F4FFF1CA8D63A008210FF /* ListNode.cpp in Sources */,

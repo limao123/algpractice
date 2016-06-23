@@ -24,3 +24,11 @@ void LTTestString(string except, string test,string errMsg){
         printf("fail except:%s test:%s errorMsg:%s\n",except.c_str(),test.c_str(),errMsg.c_str());
     }
 }
+
+void LTTestBool(bool except,bool test,string errMsg){
+    if (except == test) {
+        printf("pass except:%d test:%d\n",except,test);
+    } else {
+        printf("fail except:%d test:%d errorMsg:%s\n",except,test,errMsg.c_str());
+    }
+}

@@ -15,5 +15,5 @@ using namespace std;
 
 void LTTest(int except, int test,string msg = "");
 void LTTestString(string except, string test,string errMsg = "");
-
+void LTTestBool(bool except,bool test,string errMsg = "");
 #endif /* LTTest_hpp */

@@ -32,8 +32,8 @@ public:
 void preOrder(TreeNode *node,stringstream &result);
 void testPreOrder();
 
-void inOrder(TreeNode *node);
-void postOrder(TreeNode *node);
+void inOrder(TreeNode *node,stringstream &result);
+void postOrder(TreeNode *node,stringstream &result);
 string serialize(TreeNode *root);
 TreeNode * deserialize(string data);
 

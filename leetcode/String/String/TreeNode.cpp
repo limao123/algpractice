@@ -17,13 +17,7 @@ void preOrder(TreeNode *node,stringstream &result){
     if (node == NULL) {
         return;
     }
-//    stringstream os;
     result << node->val << " ";
-//    result.append(os.str());
-    
-//    valStr
-//    sprintf(valStr, "%d ",node->val);
-//    result.append(valStr);
     preOrder(node->left,result);
     preOrder(node->right,result);
     
@@ -36,44 +30,52 @@ void testPreOrder(){
     
     TreeNode *nullTree = deserialize("{}");
     preOrder(nullTree, result);
-    result >> str;
     LTTestString("", str);
     
-    result.clear();
-    str.clear();
-    
+    result.str("");
     TreeNode *oneTree = deserialize("{1}");
     preOrder(oneTree, result);
-    result >> str;
     LTTestString("1 ", result.str());
     
-    result.clear();
-    str.clear();
-    
+    result.str("");
     TreeNode *twoTree = deserialize("{1,2,3}");
     preOrder(twoTree, result);
-    result >> str;
-    LTTestString("2 1 3 ", str);
+    LTTestString("1 2 3 ", result.str());
+    
+    result.str("");
+    TreeNode *leftTree = deserialize("{1,2,#,3,#,4}");
+    preOrder(leftTree, result);
+    LTTestString("1 2 3 4 ", result.str());
+    
+    result.str("");
+    TreeNode *rightTree = deserialize("{1,#,2,#,3,#,4}");
+    preOrder(rightTree, result);
+    LTTestString("1 2 3 4 ", result.str());
+    
+    result.str("");
+    TreeNode *threeTree = deserialize("{1,2,3,4,5,6,7}");
+    preOrder(threeTree, result);
+    LTTestString("1 2 4 5 3 6 7 ", result.str());
     printf("test preOrder end----------------------------------------------\n");
 }
 
 
-void inOrder(TreeNode *node){
+void inOrder(TreeNode *node,stringstream &result){
     if (node == NULL) {
         return;
     }
-    inOrder(node->left);
-    cout << node->val << " ";
-    inOrder(node->right);
+    inOrder(node->left,result);
+    result << node->val << " ";
+    inOrder(node->right,result);
 }
 
-void postOrder(TreeNode *node){
+void postOrder(TreeNode *node,stringstream &result){
     if (node == NULL) {
         return;
     }
     
-    postOrder(node->left);
-    postOrder(node->right);
+    postOrder(node->left,result);
+    postOrder(node->right,result);
     cout << node->val << " ";
 }
 

@@ -186,5 +186,6 @@ int main(int argc, const char * argv[]) {
     testMaxDepth();
     testMinDepth();
     testPreOrder();
+    testIsBalanced();
     return 0;
 }
