@@ -45,23 +45,23 @@ int minDepth(TreeNode *root) {
 
 void testMinDepth() {
     printf("test minDepth begin--------------------------------------------\n");
-    TreeNode *nullTree = TreeNode::deserialize("{}");
+    TreeNode *nullTree = deserialize("{}");
     int depth1 = minDepth(nullTree);
     LTTest(0, depth1);
     
-    TreeNode *oneTree = TreeNode::deserialize("{1}");
+    TreeNode *oneTree = deserialize("{1}");
     int depth2 = minDepth(oneTree);
     LTTest(1, depth2);
     
-    TreeNode *twoTree = TreeNode::deserialize("{1,2,3}");
+    TreeNode *twoTree = deserialize("{1,2,3}");
     int depth3 = minDepth(twoTree);
     LTTest(2, depth3);
     
-    TreeNode *leftTree = TreeNode::deserialize("{1,2,3,4,#,#,#,5}");
+    TreeNode *leftTree = deserialize("{1,2,3,4,#,#,#,5}");
     int depth4 = minDepth(leftTree);
     LTTest(2, depth4);
     
-    TreeNode *rightTree = TreeNode::deserialize("{1,2,3,#,#,#,4,#,5}");
+    TreeNode *rightTree = deserialize("{1,2,3,#,#,#,4,#,5}");
     int depth5 = minDepth(rightTree);
     LTTest(2, depth5);
     printf("test minDepth end----------------------------------------------\n");
@@ -98,23 +98,24 @@ int maxDepth(TreeNode *root) {
 
 void testMaxDepth(){
     printf("test maxDepth begin--------------------------------------------\n");
-    TreeNode *nullTree = TreeNode::deserialize("{}");
+    TreeNode *nullTree = deserialize("{}");
     int depth1 = maxDepth(nullTree);
     LTTest(0, depth1);
     
-    TreeNode *oneTree = TreeNode::deserialize("{1}");
+    TreeNode *oneTree = deserialize("{1}");
     int depth2 = maxDepth(oneTree);
     LTTest(1, depth2);
     
-    TreeNode *twoTree = TreeNode::deserialize("{1,2,3}");
+    TreeNode *twoTree = deserialize("{1,2,3}");
     int depth3 = maxDepth(twoTree);
     LTTest(2, depth3);
     
-    TreeNode *leftTree = TreeNode::deserialize("{1,2,#,3,#,4}");
+    TreeNode *leftTree = deserialize
+    ("{1,2,#,3,#,4}");
     int depth4 = maxDepth(leftTree);
     LTTest(4, depth4);
     
-    TreeNode *rightTree = TreeNode::deserialize("{1,#,2,#,3,#,4}");
+    TreeNode *rightTree = deserialize("{1,#,2,#,3,#,4}");
     int depth5 = maxDepth(rightTree);
     LTTest(4, depth5);
     
@@ -127,6 +128,13 @@ void testMaxDepth(){
  *  @param root 需要判断的二叉树
  *
  *  @return 平衡返回true
+ 
+ 
+ 
+ 
+ 
+ 
+ 
  */
 bool isBalanced(TreeNode *root) {
     if (root == NULL) {

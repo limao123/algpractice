@@ -10,6 +10,7 @@
 #include <iostream>
 #include <stdio.h>
 #include <sstream>
+#include "LTTest.hpp"
 using namespace std;
 
 void preOrder(TreeNode *node,stringstream &result){
@@ -23,13 +24,37 @@ void preOrder(TreeNode *node,stringstream &result){
 //    valStr
 //    sprintf(valStr, "%d ",node->val);
 //    result.append(valStr);
-    preOrder(node->left);
-    preOrder(node->right);
+    preOrder(node->left,result);
+    preOrder(node->right,result);
     
 }
 
 void testPreOrder(){
+    printf("test preOrder begin--------------------------------------------\n");
+    stringstream result;
+    string str;
     
+    TreeNode *nullTree = deserialize("{}");
+    preOrder(nullTree, result);
+    result >> str;
+    LTTestString("", str);
+    
+    result.clear();
+    str.clear();
+    
+    TreeNode *oneTree = deserialize("{1}");
+    preOrder(oneTree, result);
+    result >> str;
+    LTTestString("1 ", result.str());
+    
+    result.clear();
+    str.clear();
+    
+    TreeNode *twoTree = deserialize("{1,2,3}");
+    preOrder(twoTree, result);
+    result >> str;
+    LTTestString("2 1 3 ", str);
+    printf("test preOrder end----------------------------------------------\n");
 }
 
 

@@ -29,10 +29,12 @@ public:
     }
 };
 
-void preOrder(TreeNode *node);
+void preOrder(TreeNode *node,stringstream &result);
+void testPreOrder();
+
 void inOrder(TreeNode *node);
 void postOrder(TreeNode *node);
-static string serialize(TreeNode *root);
-static TreeNode * deserialize(string data);
+string serialize(TreeNode *root);
+TreeNode * deserialize(string data);
 
 #endif /* TreeNode_hpp */

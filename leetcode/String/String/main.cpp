@@ -127,8 +127,8 @@ void testSearchRange() {
 }
 
 void testSerialize() {
-    TreeNode *root = TreeNode::deserialize("{3,9,20,#,#,15,7}");
-    string data = TreeNode::serialize(root);
+    TreeNode *root = deserialize("{3,9,20,#,#,15,7}");
+    string data = serialize(root);
 }
 
 int main(int argc, const char * argv[]) {
@@ -185,5 +185,6 @@ int main(int argc, const char * argv[]) {
 //    testSerialize();
     testMaxDepth();
     testMinDepth();
+    testPreOrder();
     return 0;
 }

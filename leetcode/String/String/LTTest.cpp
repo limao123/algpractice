@@ -16,3 +16,11 @@ void LTTest(int except, int test,string errMsg){
         printf("fail except:%d test:%d errorMsg:%s\n",except,test,errMsg.c_str());
     }
 }
+
+void LTTestString(string except, string test,string errMsg){
+    if (except.compare(test) == 0) {
+        printf("pass except:%s test:%s\n",except.c_str(),test.c_str());
+    } else {
+        printf("fail except:%s test:%s errorMsg:%s\n",except.c_str(),test.c_str(),errMsg.c_str());
+    }
+}
