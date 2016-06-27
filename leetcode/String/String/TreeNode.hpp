@@ -34,7 +34,13 @@ void testPreOrder();
 
 void inOrder(TreeNode *node,stringstream &result);
 void postOrder(TreeNode *node,stringstream &result);
+
+string hierarchyOrder(TreeNode *root);
+void testHierarchyOrder();
+
 string serialize(TreeNode *root);
+void testSerialize();
+
 TreeNode * deserialize(string data);
 
 #endif /* TreeNode_hpp */

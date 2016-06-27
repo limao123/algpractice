@@ -126,10 +126,7 @@ void testSearchRange() {
     vector<int> result = searchRange(root, 10, 22);
 }
 
-void testSerialize() {
-    TreeNode *root = deserialize("{3,9,20,#,#,15,7}");
-    string data = serialize(root);
-}
+
 
 int main(int argc, const char * argv[]) {
 //    testLinkedList();
@@ -187,5 +184,7 @@ int main(int argc, const char * argv[]) {
     testMinDepth();
     testPreOrder();
     testIsBalanced();
+    testSerialize();
+    testHierarchyOrder();
     return 0;
 }

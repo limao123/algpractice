@@ -79,10 +79,74 @@ void postOrder(TreeNode *node,stringstream &result){
     cout << node->val << " ";
 }
 
+
+string hierarchyOrder(TreeNode *root){
+    if (root == NULL) {
+        return "{}";
+    }
+    
+    vector<TreeNode *> v;
+    v.push_back(root);
+    
+     //将所有节点放入vector中
+    for (int i = 0; i < v.size(); i++) {
+        TreeNode *temp = v[i];
+        if (temp == NULL) {
+            continue;
+        } else {
+            v.push_back(temp->left);
+            v.push_back(temp->right);
+        }
+    }
+    
+    //移除掉放叶子节点进vector时放入的大量空节点
+    while (v[v.size()-1] == NULL) {
+        v.pop_back();
+    }
+    
+    //遍历vector打印节点值
+    stringstream result;
+    result << "{" << root->val;
+    for (int i = 1; i < v.size(); i++) {
+        TreeNode *temp = v[i];
+        if (temp == NULL) {
+            result << ",#";
+        } else {
+            result << "," << temp->val;
+        }
+    }
+    result << "}";
+    return result.str();
+}
+
+void testHierarchyOrder(){
+    printf("test hierarchyOrder begin--------------------------------------\n");
+    
+    TreeNode *root1 = NULL;
+    string str1 = hierarchyOrder(root1);
+    LTTestString("{}", str1);
+    
+    TreeNode *root2 = new TreeNode(1);
+    TreeNode *second1 = new TreeNode(2);
+    TreeNode *second2 = new TreeNode(3);
+    root2->left = second1;
+    root2->right = second2;
+    TreeNode *third1 = new TreeNode(4);
+    TreeNode *third2 = new TreeNode (5);
+    second1->left = third1;
+    second2->right = third2;
+    string str2 = serialize(root2);
+    LTTestString("{1,2,3,4,#,#,5}", str2);
+    
+    printf("test hierarchyOrder end----------------------------------------\n");
+}
+
 /**
- * This method will be invoked first, you should design your own algorithm
- * to serialize a binary tree which denote by a root node to a string which
- * can be easily deserialized by your own "deserialize" method later.
+ *  层次遍历序列化二叉树
+ *
+ *  @param root 需要序列化的二叉树的根节点
+ *
+ *  @return 序列化后的结果
  */
 string serialize(TreeNode *root) {
     // write your code here
@@ -94,6 +158,7 @@ string serialize(TreeNode *root) {
     vector<TreeNode *> v;
     v.push_back(root);
     
+    //将所有节点放入vector中
     for (int i = 0; i < v.size(); i++) {
         TreeNode *temp = v[i];
         if (temp == NULL) {
@@ -104,24 +169,48 @@ string serialize(TreeNode *root) {
         }
     }
     
+    //移除掉放叶子节点进vector时放入的大量空节点
     while (v[v.size()-1] == NULL) {
         v.pop_back();
     }
     
-    string result = "{";
-    for (int i = 0; i < v.size(); i++) {
+    //遍历vector打印节点值
+    stringstream str;
+    str << "{" << root->val;
+    for (int i= 1; i < v.size(); i++) {
         TreeNode *temp = v[i];
         if (temp == NULL) {
-            result.append(",#");
+            str << ",#";
         } else {
-            result.append(",");
-            char val[64];
-            sprintf(val, "%d",temp->val);
-            result.append(val);
+            str << "," << temp->val ;
         }
     }
-    result.append("}");
-    return result;
+    str << "}";
+    return str.str();
+}
+
+
+
+void testSerialize() {
+    printf("test serialize begin-------------------------------------------\n");
+    
+    TreeNode *root1 = NULL;
+    string str1 = serialize(root1);
+    LTTestString("{}", str1);
+    
+    TreeNode *root2 = new TreeNode(1);
+    TreeNode *second1 = new TreeNode(2);
+    TreeNode *second2 = new TreeNode(3);
+    root2->left = second1;
+    root2->right = second2;
+    TreeNode *third1 = new TreeNode(4);
+    TreeNode *third2 = new TreeNode (5);
+    second1->left = third1;
+    second2->right = third2;
+    string str2 = serialize(root2);
+    LTTestString("{1,2,3,4,#,#,5}", str2);
+    
+    printf("test serialize end---------------------------------------------\n");
 }
 
 int split(const string& str, vector<string>& ret_, string sep = ",")
