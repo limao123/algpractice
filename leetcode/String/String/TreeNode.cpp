@@ -10,73 +10,78 @@
 #include <iostream>
 #include <stdio.h>
 #include <sstream>
-#include "LTTest.hpp"
 using namespace std;
 
-void preOrder(TreeNode *node,stringstream &result){
-    if (node == NULL) {
+void preOrder(TreeNode *root,stringstream &result){
+    if (root == NULL) {
         return;
     }
-    result << node->val << " ";
-    preOrder(node->left,result);
-    preOrder(node->right,result);
+    result << root->val << " ";
+    preOrder(root->left,result);
+    preOrder(root->right,result);
     
 }
 
-void testPreOrder(){
-    printf("test preOrder begin--------------------------------------------\n");
-    stringstream result;
-    string str;
-    
-    TreeNode *nullTree = deserialize("{}");
-    preOrder(nullTree, result);
-    LTTestString("", str);
-    
-    result.str("");
-    TreeNode *oneTree = deserialize("{1}");
-    preOrder(oneTree, result);
-    LTTestString("1 ", result.str());
-    
-    result.str("");
-    TreeNode *twoTree = deserialize("{1,2,3}");
-    preOrder(twoTree, result);
-    LTTestString("1 2 3 ", result.str());
-    
-    result.str("");
-    TreeNode *leftTree = deserialize("{1,2,#,3,#,4}");
-    preOrder(leftTree, result);
-    LTTestString("1 2 3 4 ", result.str());
-    
-    result.str("");
-    TreeNode *rightTree = deserialize("{1,#,2,#,3,#,4}");
-    preOrder(rightTree, result);
-    LTTestString("1 2 3 4 ", result.str());
-    
-    result.str("");
-    TreeNode *threeTree = deserialize("{1,2,3,4,5,6,7}");
-    preOrder(threeTree, result);
-    LTTestString("1 2 4 5 3 6 7 ", result.str());
-    printf("test preOrder end----------------------------------------------\n");
-}
 
 
-void inOrder(TreeNode *node,stringstream &result){
-    if (node == NULL) {
-        return;
-    }
-    inOrder(node->left,result);
-    result << node->val << " ";
-    inOrder(node->right,result);
-}
-
-void postOrder(TreeNode *node,stringstream &result){
-    if (node == NULL) {
+void preOrderNonrecursive(TreeNode *root,stringstream &result){
+    if (root == NULL) {
         return;
     }
     
-    postOrder(node->left,result);
-    postOrder(node->right,result);
-    cout << node->val << " ";
+    stack<TreeNode *> s;
+    TreeNode *temp = root;
+    while (temp != NULL || !s.empty()) {
+        if (temp != NULL ) {
+            result << temp->val << " ";
+            s.push(temp);
+            temp = temp->left;
+        } else {
+            temp = s.top();
+            s.pop();
+            temp = temp->right;
+        }
+    }
+}
+
+
+void inOrder(TreeNode *root,stringstream &result){
+    if (root == NULL) {
+        return;
+    }
+    inOrder(root->left,result);
+    result << root->val << " ";
+    inOrder(root->right,result);
+}
+
+void inOrderNonrecursive(TreeNode *root,stringstream &result){
+    if (root == NULL) {
+        return;
+    }
+    
+    stack<TreeNode *> s;
+    TreeNode *temp = root;
+    while (temp != NULL || !s.empty()) {
+        if (temp != NULL ) {
+            s.push(temp);
+            temp = temp->left;
+        } else {
+            temp = s.top();
+            s.pop();
+            result << temp->val << " ";
+            temp = temp->right;
+        }
+    }
+}
+
+void postOrder(TreeNode *root,stringstream &result){
+    if (root == NULL) {
+        return;
+    }
+    
+    postOrder(root->left,result);
+    postOrder(root->right,result);
+    cout << root->val << " ";
 }
 
 
@@ -119,27 +124,7 @@ string hierarchyOrder(TreeNode *root){
     return result.str();
 }
 
-void testHierarchyOrder(){
-    printf("test hierarchyOrder begin--------------------------------------\n");
-    
-    TreeNode *root1 = NULL;
-    string str1 = hierarchyOrder(root1);
-    LTTestString("{}", str1);
-    
-    TreeNode *root2 = new TreeNode(1);
-    TreeNode *second1 = new TreeNode(2);
-    TreeNode *second2 = new TreeNode(3);
-    root2->left = second1;
-    root2->right = second2;
-    TreeNode *third1 = new TreeNode(4);
-    TreeNode *third2 = new TreeNode (5);
-    second1->left = third1;
-    second2->right = third2;
-    string str2 = serialize(root2);
-    LTTestString("{1,2,3,4,#,#,5}", str2);
-    
-    printf("test hierarchyOrder end----------------------------------------\n");
-}
+
 
 /**
  *  层次遍历序列化二叉树
@@ -189,29 +174,6 @@ string serialize(TreeNode *root) {
     return str.str();
 }
 
-
-
-void testSerialize() {
-    printf("test serialize begin-------------------------------------------\n");
-    
-    TreeNode *root1 = NULL;
-    string str1 = serialize(root1);
-    LTTestString("{}", str1);
-    
-    TreeNode *root2 = new TreeNode(1);
-    TreeNode *second1 = new TreeNode(2);
-    TreeNode *second2 = new TreeNode(3);
-    root2->left = second1;
-    root2->right = second2;
-    TreeNode *third1 = new TreeNode(4);
-    TreeNode *third2 = new TreeNode (5);
-    second1->left = third1;
-    second2->right = third2;
-    string str2 = serialize(root2);
-    LTTestString("{1,2,3,4,#,#,5}", str2);
-    
-    printf("test serialize end---------------------------------------------\n");
-}
 
 int split(const string& str, vector<string>& ret_, string sep = ",")
 {

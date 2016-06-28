@@ -14,6 +14,7 @@
 #include <queue>
 #include <vector>
 #include <cstdlib>
+#include <stack>
 using namespace std;
 
 
@@ -29,17 +30,17 @@ public:
     }
 };
 
-void preOrder(TreeNode *node,stringstream &result);
-void testPreOrder();
-
-void inOrder(TreeNode *node,stringstream &result);
-void postOrder(TreeNode *node,stringstream &result);
+void preOrder(TreeNode *root,stringstream &result);
+void preOrderNonrecursive(TreeNode *root,stringstream &result);
+void inOrder(TreeNode *root,stringstream &result);
+void inOrderNonrecursive(TreeNode *root,stringstream &result);
+void postOrder(TreeNode *root,stringstream &result);
 
 string hierarchyOrder(TreeNode *root);
-void testHierarchyOrder();
+
 
 string serialize(TreeNode *root);
-void testSerialize();
+
 
 TreeNode * deserialize(string data);
 

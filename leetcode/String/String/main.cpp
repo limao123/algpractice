@@ -17,6 +17,7 @@
 #include <string>
 #include "LinkedList.hpp"
 #include "BinaryTree.hpp"
+#include "TestTreeNode.hpp"
 using namespace std;
 
 void print(int n){
@@ -180,11 +181,14 @@ int main(int argc, const char * argv[]) {
 //    testLevelOrder();
 //    testSearchRange();
 //    testSerialize();
-    testMaxDepth();
-    testMinDepth();
-    testPreOrder();
-    testIsBalanced();
-    testSerialize();
-    testHierarchyOrder();
+//    testMaxDepth();
+//    testMinDepth();
+//    testPreOrder();
+//    testIsBalanced();
+//    testSerialize();
+//    testHierarchyOrder();
+//    testPreOrderNonrecursive();
+    testInOrder();
+    testInOrderNonrecursive();
     return 0;
 }
