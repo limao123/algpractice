@@ -84,6 +84,38 @@ void postOrder(TreeNode *root,stringstream &result){
     cout << root->val << " ";
 }
 
+void postOrderNonrecursive(TreeNode *root,stringstream &result){
+    if (root == NULL) {
+        return;
+    }
+    
+    stack<TreeNode *> s;
+    //用来标记对应节点访问的是左子树还是右子树,
+    stack<bool> isRightTreeStack;
+    TreeNode *temp = root;
+    while (!root || !s.empty()) {
+        if (temp != NULL && isRightTreeStack.top() != false) {
+            s.push(temp);
+            isRightTreeStack.push(false);
+            temp = temp->left;
+        } else {
+            bool isRight = isRightTreeStack.top();
+            temp = s.top();
+            while(isRight) {
+                result << temp->val << " ";
+                s.pop();
+                isRightTreeStack.pop();
+                temp = s.top();
+                isRight = isRightTreeStack.top();
+            }
+            isRightTreeStack.pop();
+            isRightTreeStack.push(true);
+            temp = temp->right;
+            
+        }
+    }
+}
+
 
 string hierarchyOrder(TreeNode *root){
     if (root == NULL) {
