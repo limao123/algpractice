@@ -28,11 +28,10 @@ void preOrderNonrecursive(TreeNode *root,stringstream &result){
     if (root == NULL) {
         return;
     }
-    
-    stack<TreeNode *> s;
-    TreeNode *temp = root;
-    
+        
 //实现1
+//    stack<TreeNode *> s;
+//    TreeNode *temp = root;
 //    while (temp != NULL || !s.empty()) {
 //        if (temp != NULL ) {
 //            result << temp->val << " ";
@@ -46,17 +45,36 @@ void preOrderNonrecursive(TreeNode *root,stringstream &result){
 //    }
     
     //实现2
-    while (temp != NULL || !s.empty()) {
-        while (temp != NULL) {
-            result << temp->val << " ";
-            s.push(temp);
-            temp = temp->left;
+//    stack<TreeNode *> s;
+//    TreeNode *temp = root;
+//    while (temp != NULL || !s.empty()) {
+//        while (temp != NULL) {
+//            result << temp->val << " ";
+//            s.push(temp);
+//            temp = temp->left;
+//        }
+//        
+//        if (!s.empty()) {
+//            temp = s.top();
+//            s.pop();
+//            temp = temp->right;
+//        }
+//    }
+    
+    //实现3
+    stack<TreeNode *> s;
+    s.push(root);
+    while (!s.empty()) {
+        TreeNode *temp = s.top();
+        result << temp->val << " ";
+        s.pop();
+        
+        if (temp->right) {
+            s.push(temp->right);
         }
         
-        if (!s.empty()) {
-            temp = s.top();
-            s.pop();
-            temp = temp->right;
+        if (temp->left) {
+            s.push(temp->left);
         }
     }
     
@@ -78,8 +96,9 @@ void inOrderNonrecursive(TreeNode *root,stringstream &result){
         return;
     }
     
-    stack<TreeNode *> s;
-    TreeNode *temp = root;
+    //实现1
+//    stack<TreeNode *> s;
+//    TreeNode *temp = root;
 //    while (temp != NULL || !s.empty()) {
 //        if (temp != NULL ) {
 //            s.push(temp);
@@ -92,19 +111,25 @@ void inOrderNonrecursive(TreeNode *root,stringstream &result){
 //        }
 //    }
     
-    while (temp != NULL || !s.empty()) {
-        while (temp != NULL) {
-            s.push(temp);
-            temp = temp->left;
-        }
-        
-        if (!s.empty()) {
-            temp = s.top();
-            s.pop();
-            result << temp->val << " ";
-            temp = temp->right;
-        }
-    }
+    //实现2
+//    stack<TreeNode *> s;
+//    TreeNode *temp = root;
+//    while (temp != NULL || !s.empty()) {
+//        while (temp != NULL) {
+//            s.push(temp);
+//            temp = temp->left;
+//        }
+//        
+//        if (!s.empty()) {
+//            temp = s.top();
+//            s.pop();
+//            result << temp->val << " ";
+//            temp = temp->right;
+//        }
+//    }
+    
+    //实现3
+    
 }
 
 void postOrder(TreeNode *root,stringstream &result){

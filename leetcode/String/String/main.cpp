@@ -187,10 +187,10 @@ int main(int argc, const char * argv[]) {
 //    testIsBalanced();
 //    testSerialize();
 //    testHierarchyOrder();
-//    testPreOrderNonrecursive();
+    testPreOrderNonrecursive();
 //    testInOrder();
 //    testInOrderNonrecursive();
 //    testPostOrder();
-    testPostOrderNonrecursive();
+//    testPostOrderNonrecursive();
     return 0;
 }
