@@ -15,6 +15,9 @@ void testPreOrder();
 void testPreOrderNonrecursive();
 void testInOrder();
 void testInOrderNonrecursive();
+void testPostOrder();
+void testPostOrderNonrecursive();
+
 void testHierarchyOrder();
 void testSerialize();
 #endif /* TestTreeNode_hpp */

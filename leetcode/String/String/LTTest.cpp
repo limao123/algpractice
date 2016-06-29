@@ -18,6 +18,7 @@ void LTTest(int except, int test,string errMsg){
 }
 
 void LTTestString(string except, string test,string errMsg){
+    
     if (except.compare(test) == 0) {
         printf("pass except:%s test:%s\n",except.c_str(),test.c_str());
     } else {

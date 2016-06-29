@@ -35,6 +35,7 @@ void preOrderNonrecursive(TreeNode *root,stringstream &result);
 void inOrder(TreeNode *root,stringstream &result);
 void inOrderNonrecursive(TreeNode *root,stringstream &result);
 void postOrder(TreeNode *root,stringstream &result);
+void postOrderNonrecursive(TreeNode *root,stringstream &result);
 
 string hierarchyOrder(TreeNode *root);
 

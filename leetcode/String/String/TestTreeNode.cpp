@@ -156,6 +156,78 @@ void testInOrderNonrecursive(){
     printf("test inOrderNonrecursive end-----------------------------------\n");
 }
 
+void testPostOrder(){
+    printf("test postOrder begin-------------------------------------------\n");
+    stringstream result;
+    string str;
+    
+    TreeNode *nullTree = deserialize("{}");
+    postOrder(nullTree, result);
+    LTTestString("1", str);
+    
+    result.str("");
+    TreeNode *oneTree = deserialize("{1}");
+    postOrder(oneTree, result);
+    LTTestString("1 ", result.str());
+    
+    result.str("");
+    TreeNode *twoTree = deserialize("{1,2,3}");
+    postOrder(twoTree, result);
+    LTTestString("2 3 1 ", result.str());
+    
+    result.str("");
+    TreeNode *leftTree = deserialize("{1,2,#,3,#,4}");
+    postOrder(leftTree, result);
+    LTTestString("4 3 2 1 ", result.str());
+    
+    result.str("");
+    TreeNode *rightTree = deserialize("{1,#,2,#,3,#,4}");
+    postOrder(rightTree, result);
+    LTTestString("4 3 2 1 ", result.str());
+    
+    result.str("");
+    TreeNode *threeTree = deserialize("{1,2,3,4,5,6,7}");
+    postOrder(threeTree, result);
+    LTTestString("4 5 2 6 7 3 1 ", result.str());
+    printf("test postOrder end---------------------------------------------\n");
+}
+
+void testPostOrderNonrecursive(){
+    printf("test postOrderNonrecursive begin-------------------------------\n");
+    stringstream result;
+    string str;
+    
+    TreeNode *nullTree = deserialize("{}");
+    postOrderNonrecursive(nullTree, result);
+    LTTestString("", str);
+    
+    result.str("");
+    TreeNode *oneTree = deserialize("{1}");
+    postOrderNonrecursive(oneTree, result);
+    LTTestString("1 ", result.str());
+    
+    result.str("");
+    TreeNode *twoTree = deserialize("{1,2,3}");
+    postOrderNonrecursive(twoTree, result);
+    LTTestString("2 3 1 ", result.str());
+    
+    result.str("");
+    TreeNode *leftTree = deserialize("{1,2,#,3,#,4}");
+    postOrderNonrecursive(leftTree, result);
+    LTTestString("4 3 2 1 ", result.str());
+    
+    result.str("");
+    TreeNode *rightTree = deserialize("{1,#,2,#,3,#,4}");
+    postOrderNonrecursive(rightTree, result);
+    LTTestString("4 3 2 1 ", result.str());
+    
+    result.str("");
+    TreeNode *threeTree = deserialize("{1,2,3,4,5,6,7}");
+    postOrderNonrecursive(threeTree, result);
+    LTTestString("4 5 2 6 7 3 1 ", result.str());
+    printf("test postOrderNonrecursive end---------------------------------\n");
+}
+
 void testHierarchyOrder(){
     printf("test hierarchyOrder begin--------------------------------------\n");
     

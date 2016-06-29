@@ -188,7 +188,9 @@ int main(int argc, const char * argv[]) {
 //    testSerialize();
 //    testHierarchyOrder();
 //    testPreOrderNonrecursive();
-    testInOrder();
-    testInOrderNonrecursive();
+//    testInOrder();
+//    testInOrderNonrecursive();
+//    testPostOrder();
+    testPostOrderNonrecursive();
     return 0;
 }

@@ -31,17 +31,36 @@ void preOrderNonrecursive(TreeNode *root,stringstream &result){
     
     stack<TreeNode *> s;
     TreeNode *temp = root;
+    
+//实现1
+//    while (temp != NULL || !s.empty()) {
+//        if (temp != NULL ) {
+//            result << temp->val << " ";
+//            s.push(temp);
+//            temp = temp->left;
+//        } else {
+//            temp = s.top();
+//            s.pop();
+//            temp = temp->right;
+//        }
+//    }
+    
+    //实现2
     while (temp != NULL || !s.empty()) {
-        if (temp != NULL ) {
+        while (temp != NULL) {
             result << temp->val << " ";
             s.push(temp);
             temp = temp->left;
-        } else {
+        }
+        
+        if (!s.empty()) {
             temp = s.top();
             s.pop();
             temp = temp->right;
         }
     }
+    
+    
 }
 
 
@@ -61,11 +80,25 @@ void inOrderNonrecursive(TreeNode *root,stringstream &result){
     
     stack<TreeNode *> s;
     TreeNode *temp = root;
+//    while (temp != NULL || !s.empty()) {
+//        if (temp != NULL ) {
+//            s.push(temp);
+//            temp = temp->left;
+//        } else {
+//            temp = s.top();
+//            s.pop();
+//            result << temp->val << " ";
+//            temp = temp->right;
+//        }
+//    }
+    
     while (temp != NULL || !s.empty()) {
-        if (temp != NULL ) {
+        while (temp != NULL) {
             s.push(temp);
             temp = temp->left;
-        } else {
+        }
+        
+        if (!s.empty()) {
             temp = s.top();
             s.pop();
             result << temp->val << " ";
@@ -81,7 +114,7 @@ void postOrder(TreeNode *root,stringstream &result){
     
     postOrder(root->left,result);
     postOrder(root->right,result);
-    cout << root->val << " ";
+    result << root->val << " ";
 }
 
 void postOrderNonrecursive(TreeNode *root,stringstream &result){
@@ -93,25 +126,59 @@ void postOrderNonrecursive(TreeNode *root,stringstream &result){
     //用来标记对应节点访问的是左子树还是右子树,
     stack<bool> isRightTreeStack;
     TreeNode *temp = root;
-    while (!root || !s.empty()) {
-        if (temp != NULL && isRightTreeStack.top() != false) {
-            s.push(temp);
+//    while (temp || !s.empty()) {
+//        if (temp != NULL) {
+//            s.push(temp);
+//            isRightTreeStack.push(false);
+//            temp = temp->left;
+//        } else {
+//            bool isRight = isRightTreeStack.top();
+//            temp = s.top();
+//            while(isRight) {
+//                result << temp->val << " ";
+//                s.pop();
+//                isRightTreeStack.pop();
+//                
+//                if (s.empty()) {
+//                    break;
+//                } else {
+//                    temp = s.top();
+//                    isRight = isRightTreeStack.top();
+//                }
+//            }
+//            
+//            if (s.empty()) {
+//                break;
+//            } else {
+//                isRightTreeStack.pop();
+//                isRightTreeStack.push(true);
+//                temp = temp->right;
+//            }
+//            
+//        }
+//    }
+    
+    while (temp != NULL || !s.empty()) {
+        while (temp != NULL) {
             isRightTreeStack.push(false);
+            s.push(temp);
             temp = temp->left;
-        } else {
-            bool isRight = isRightTreeStack.top();
+        }
+        
+        while (!s.empty() && isRightTreeStack.top() == true) {
             temp = s.top();
-            while(isRight) {
-                result << temp->val << " ";
-                s.pop();
-                isRightTreeStack.pop();
-                temp = s.top();
-                isRight = isRightTreeStack.top();
-            }
+            result << temp->val << " ";
+            s.pop();
+            isRightTreeStack.pop();
+        }
+        
+        if (!s.empty()) {
             isRightTreeStack.pop();
             isRightTreeStack.push(true);
+            temp = s.top();
             temp = temp->right;
-            
+        } else {
+            break;
         }
     }
 }
