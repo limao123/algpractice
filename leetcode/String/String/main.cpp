@@ -18,7 +18,27 @@
 #include "LinkedList.hpp"
 #include "BinaryTree.hpp"
 #include "TestTreeNode.hpp"
+
 using namespace std;
+
+#include "gtest/gtest.h"
+
+int Factorial(int n) {
+    int result = 1;
+    for (int i = 1; i <= n; i++) {
+        result *= i;
+    }
+    
+    return result;
+}
+
+TEST(FactorialTest, Negative) {
+    // This test is named "Negative", and belongs to the "FactorialTest"
+    // test case.
+    EXPECT_EQ(1, Factorial(-5));
+    EXPECT_EQ(1, Factorial(-1));
+    EXPECT_GT(Factorial(-10), 0);
+}
 
 void print(int n){
     cout<<n<< endl;
@@ -129,7 +149,10 @@ void testSearchRange() {
 
 
 
-int main(int argc, const char * argv[]) {
+int main(int argc,char ** argv) {
+    testing::InitGoogleTest(&argc, argv);
+    return RUN_ALL_TESTS();
+    
 //    testLinkedList();
 //    testLinkedList();
 //    testLinkedListSort();
@@ -187,10 +210,10 @@ int main(int argc, const char * argv[]) {
 //    testIsBalanced();
 //    testSerialize();
 //    testHierarchyOrder();
-    testPreOrderNonrecursive();
+//    testPreOrderNonrecursive();
 //    testInOrder();
 //    testInOrderNonrecursive();
 //    testPostOrder();
 //    testPostOrderNonrecursive();
-    return 0;
+//    return 0;
 }

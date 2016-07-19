@@ -62,21 +62,21 @@ void preOrderNonrecursive(TreeNode *root,stringstream &result){
 //    }
     
     //实现3
-    stack<TreeNode *> s;
-    s.push(root);
-    while (!s.empty()) {
-        TreeNode *temp = s.top();
-        result << temp->val << " ";
-        s.pop();
-        
-        if (temp->right) {
-            s.push(temp->right);
-        }
-        
-        if (temp->left) {
-            s.push(temp->left);
-        }
-    }
+//    stack<TreeNode *> s;
+//    s.push(root);
+//    while (!s.empty()) {
+//        TreeNode *temp = s.top();
+//        result << temp->val << " ";
+//        s.pop();
+//        
+//        if (temp->right) {
+//            s.push(temp->right);
+//        }
+//        
+//        if (temp->left) {
+//            s.push(temp->left);
+//        }
+//    }
     
     
 }
