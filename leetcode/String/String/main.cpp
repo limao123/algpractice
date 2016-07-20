@@ -17,11 +17,12 @@
 #include <string>
 #include "LinkedList.hpp"
 #include "BinaryTree.hpp"
-#include "TestTreeNode.hpp"
+#include "gtest/gtest.h"
+
 
 using namespace std;
 
-#include "gtest/gtest.h"
+//#include "gtest/gtest.h"
 
 int Factorial(int n) {
     int result = 1;
@@ -32,13 +33,13 @@ int Factorial(int n) {
     return result;
 }
 
-TEST(FactorialTest, Negative) {
-    // This test is named "Negative", and belongs to the "FactorialTest"
-    // test case.
-    EXPECT_EQ(1, Factorial(-5));
-    EXPECT_EQ(1, Factorial(-1));
-    EXPECT_GT(Factorial(-10), 0);
-}
+//TEST(FactorialTest, Negative) {
+//    // This test is named "Negative", and belongs to the "FactorialTest"
+//    // test case.
+//    EXPECT_EQ(1, Factorial(-5));
+//    EXPECT_EQ(1, Factorial(-1));
+//    EXPECT_GT(Factorial(-10), 0);
+//}
 
 void print(int n){
     cout<<n<< endl;
@@ -150,6 +151,7 @@ void testSearchRange() {
 
 
 int main(int argc,char ** argv) {
+//    testing::AddGlobalTestEnvironment(new TestTreeNode);
     testing::InitGoogleTest(&argc, argv);
     return RUN_ALL_TESTS();
     

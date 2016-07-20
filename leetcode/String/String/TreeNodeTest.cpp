@@ -1,239 +1,230 @@
 //
-//  TestTreeNode.cpp
+//  TreeNodeTest.cpp
 //  String
 //
-//  Created by bmob-LT on 16/6/28.
+//  Created by bmob-LT on 16/7/20.
 //  Copyright © 2016年 limaofuyuanzhang. All rights reserved.
 //
 
-#include "TestTreeNode.hpp"
-#include "LTTest.hpp"
-#include <iostream>
+#include <stdio.h>
+#include "gtest/gtest.h"
+#include "TreeNode.hpp"
 #include <sstream>
 using namespace std;
 
-void testPreOrder(){
-    printf("test preOrder begin--------------------------------------------\n");
+//class TreeNodeTest:public testing::Test{
+//protected:
+//    virtual void SetUp(){
+//        
+//    }
+//    virtual void TearDown(){
+//        
+//    }
+//    
+//};
+
+TEST(TreeNodeTest, PreOrder) {
     stringstream result;
-    string str;
-    
     TreeNode *nullTree = deserialize("{}");
     preOrder(nullTree, result);
-    LTTestString("", str);
+    EXPECT_STREQ("", result.str().c_str());
     
     result.str("");
     TreeNode *oneTree = deserialize("{1}");
     preOrder(oneTree, result);
-    LTTestString("1 ", result.str());
+    EXPECT_STREQ("1 ", result.str().c_str());
     
     result.str("");
     TreeNode *twoTree = deserialize("{1,2,3}");
     preOrder(twoTree, result);
-    LTTestString("1 2 3 ", result.str());
+    EXPECT_STREQ("1 2 3 ", result.str().c_str());
     
     result.str("");
     TreeNode *leftTree = deserialize("{1,2,#,3,#,4}");
     preOrder(leftTree, result);
-    LTTestString("1 2 3 4 ", result.str());
+    EXPECT_STREQ("1 2 3 4 ", result.str().c_str());
     
     result.str("");
     TreeNode *rightTree = deserialize("{1,#,2,#,3,#,4}");
     preOrder(rightTree, result);
-    LTTestString("1 2 3 4 ", result.str());
+    EXPECT_STREQ("1 2 3 4 ", result.str().c_str());
     
     result.str("");
     TreeNode *threeTree = deserialize("{1,2,3,4,5,6,7}");
     preOrder(threeTree, result);
-    LTTestString("1 2 4 5 3 6 7 ", result.str());
-    printf("test preOrder end----------------------------------------------\n");
+    EXPECT_STREQ("1 2 4 5 3 6 7 ", result.str().c_str());
 }
 
-void testPreOrderNonrecursive(){
-    printf("test preOrderNonrecursive begin--------------------------------\n");
+TEST(TreeNodeTest, PreOrderNonrecursive){
     stringstream result;
-    string str;
-    
+
     TreeNode *nullTree = deserialize("{}");
     preOrderNonrecursive(nullTree, result);
-    LTTestString("", str);
+    EXPECT_STREQ("", result.str().c_str());
     
     result.str("");
     TreeNode *oneTree = deserialize("{1}");
     preOrderNonrecursive(oneTree, result);
-    LTTestString("1 ", result.str());
+    EXPECT_STREQ("1 ", result.str().c_str());
     
     result.str("");
     TreeNode *twoTree = deserialize("{1,2,3}");
     preOrderNonrecursive(twoTree, result);
-    LTTestString("1 2 3 ", result.str());
+    EXPECT_STREQ("1 2 3 ", result.str().c_str());
     
     result.str("");
     TreeNode *leftTree = deserialize("{1,2,#,3,#,4}");
     preOrderNonrecursive(leftTree, result);
-    LTTestString("1 2 3 4 ", result.str());
+    EXPECT_STREQ("1 2 3 4 ", result.str().c_str());
     
     result.str("");
     TreeNode *rightTree = deserialize("{1,#,2,#,3,#,4}");
     preOrderNonrecursive(rightTree, result);
-    LTTestString("1 2 3 4 ", result.str());
+    EXPECT_STREQ("1 2 3 4 ", result.str().c_str());
     
     result.str("");
     TreeNode *threeTree = deserialize("{1,2,3,4,5,6,7}");
     preOrderNonrecursive(threeTree, result);
-    LTTestString("1 2 4 5 3 6 7 ", result.str());
-    printf("test preOrderNonrecursive end----------------------------------\n");
+    EXPECT_STREQ("1 2 4 5 3 6 7 ", result.str().c_str());
 }
 
-void testInOrder(){
-    printf("test inOrder begin---------------------------------------------\n");
+TEST(TreeNodeTest, InOrder){
     stringstream result;
-    string str;
-    
+
     TreeNode *nullTree = deserialize("{}");
     inOrder(nullTree, result);
-    LTTestString("", str);
+    EXPECT_STREQ("", result.str().c_str());
     
     result.str("");
     TreeNode *oneTree = deserialize("{1}");
     inOrder(oneTree, result);
-    LTTestString("1 ", result.str());
+    EXPECT_STREQ("1 ", result.str().c_str());
     
     result.str("");
     TreeNode *twoTree = deserialize("{1,2,3}");
     inOrder(twoTree, result);
-    LTTestString("2 1 3 ", result.str());
+    EXPECT_STREQ("2 1 3 ", result.str().c_str());
     
     result.str("");
     TreeNode *leftTree = deserialize("{1,2,#,3,#,4}");
     inOrder(leftTree, result);
-    LTTestString("4 3 2 1 ", result.str());
+    EXPECT_STREQ("4 3 2 1 ", result.str().c_str());
     
     result.str("");
     TreeNode *rightTree = deserialize("{1,#,2,#,3,#,4}");
     inOrder(rightTree, result);
-    LTTestString("1 2 3 4 ", result.str());
+    EXPECT_STREQ("1 2 3 4 ", result.str().c_str());
     
     result.str("");
     TreeNode *threeTree = deserialize("{1,2,3,4,5,6,7}");
     inOrder(threeTree, result);
-    LTTestString("4 2 5 1 6 3 7 ", result.str());
-    printf("test inOrder end-----------------------------------------------\n");
+    EXPECT_STREQ("4 2 5 1 6 3 7 ", result.str().c_str());
 }
 
-void testInOrderNonrecursive(){
-    printf("test inOrderNonrecursive begin---------------------------------\n");
+TEST(TreeNodeTest, InOrderNonrecursive){
     stringstream result;
-    string str;
     
     TreeNode *nullTree = deserialize("{}");
     inOrderNonrecursive(nullTree, result);
-    LTTestString("", str);
+    EXPECT_STREQ("", result.str().c_str());
     
     result.str("");
     TreeNode *oneTree = deserialize("{1}");
     inOrderNonrecursive(oneTree, result);
-    LTTestString("1 ", result.str());
+    EXPECT_STREQ("1 ", result.str().c_str());
     
     result.str("");
     TreeNode *twoTree = deserialize("{1,2,3}");
     inOrderNonrecursive(twoTree, result);
-    LTTestString("2 1 3 ", result.str());
+    EXPECT_STREQ("2 1 3 ", result.str().c_str());
     
     result.str("");
     TreeNode *leftTree = deserialize("{1,2,#,3,#,4}");
     inOrderNonrecursive(leftTree, result);
-    LTTestString("4 3 2 1 ", result.str());
+    EXPECT_STREQ("4 3 2 1 ", result.str().c_str());
     
     result.str("");
     TreeNode *rightTree = deserialize("{1,#,2,#,3,#,4}");
     inOrderNonrecursive(rightTree, result);
-    LTTestString("1 2 3 4 ", result.str());
+    EXPECT_STREQ("1 2 3 4 ", result.str().c_str());
     
     result.str("");
     TreeNode *threeTree = deserialize("{1,2,3,4,5,6,7}");
     inOrderNonrecursive(threeTree, result);
-    LTTestString("4 2 5 1 6 3 7 ", result.str());
-    printf("test inOrderNonrecursive end-----------------------------------\n");
+    EXPECT_STREQ("4 2 5 1 6 3 7 ", result.str().c_str());
 }
 
-void testPostOrder(){
-    printf("test postOrder begin-------------------------------------------\n");
+
+TEST(TreeNodeTest, PostOrder){
     stringstream result;
-    string str;
     
     TreeNode *nullTree = deserialize("{}");
     postOrder(nullTree, result);
-    LTTestString("1", str);
+    EXPECT_STREQ("", result.str().c_str());
     
     result.str("");
     TreeNode *oneTree = deserialize("{1}");
     postOrder(oneTree, result);
-    LTTestString("1 ", result.str());
+    EXPECT_STREQ("1 ", result.str().c_str());
     
     result.str("");
     TreeNode *twoTree = deserialize("{1,2,3}");
     postOrder(twoTree, result);
-    LTTestString("2 3 1 ", result.str());
+    EXPECT_STREQ("2 3 1 ", result.str().c_str());
     
     result.str("");
     TreeNode *leftTree = deserialize("{1,2,#,3,#,4}");
     postOrder(leftTree, result);
-    LTTestString("4 3 2 1 ", result.str());
+    EXPECT_STREQ("4 3 2 1 ", result.str().c_str());
     
     result.str("");
     TreeNode *rightTree = deserialize("{1,#,2,#,3,#,4}");
     postOrder(rightTree, result);
-    LTTestString("4 3 2 1 ", result.str());
+    EXPECT_STREQ("4 3 2 1 ", result.str().c_str());
     
     result.str("");
     TreeNode *threeTree = deserialize("{1,2,3,4,5,6,7}");
     postOrder(threeTree, result);
-    LTTestString("4 5 2 6 7 3 1 ", result.str());
-    printf("test postOrder end---------------------------------------------\n");
+    EXPECT_STREQ("4 5 2 6 7 3 1 ", result.str().c_str());
 }
 
-void testPostOrderNonrecursive(){
-    printf("test postOrderNonrecursive begin-------------------------------\n");
+TEST(TreeNodeTest, PostOrderNonrecursive){
     stringstream result;
-    string str;
     
     TreeNode *nullTree = deserialize("{}");
     postOrderNonrecursive(nullTree, result);
-    LTTestString("", str);
+    EXPECT_STREQ("", result.str().c_str());
     
     result.str("");
     TreeNode *oneTree = deserialize("{1}");
     postOrderNonrecursive(oneTree, result);
-    LTTestString("1 ", result.str());
+    EXPECT_STREQ("1 ", result.str().c_str());
     
     result.str("");
     TreeNode *twoTree = deserialize("{1,2,3}");
     postOrderNonrecursive(twoTree, result);
-    LTTestString("2 3 1 ", result.str());
+    EXPECT_STREQ("2 3 1 ", result.str().c_str());
     
     result.str("");
     TreeNode *leftTree = deserialize("{1,2,#,3,#,4}");
     postOrderNonrecursive(leftTree, result);
-    LTTestString("4 3 2 1 ", result.str());
+    EXPECT_STREQ("4 3 2 1 ", result.str().c_str());
     
     result.str("");
     TreeNode *rightTree = deserialize("{1,#,2,#,3,#,4}");
     postOrderNonrecursive(rightTree, result);
-    LTTestString("4 3 2 1 ", result.str());
+    EXPECT_STREQ("4 3 2 1 ", result.str().c_str());
     
     result.str("");
     TreeNode *threeTree = deserialize("{1,2,3,4,5,6,7}");
     postOrderNonrecursive(threeTree, result);
-    LTTestString("4 5 2 6 7 3 1 ", result.str());
-    printf("test postOrderNonrecursive end---------------------------------\n");
+    EXPECT_STREQ("4 5 2 6 7 3 1 ", result.str().c_str());
 }
 
-void testHierarchyOrder(){
-    printf("test hierarchyOrder begin--------------------------------------\n");
-    
+TEST(TreeNodeTest, HierarchyOrder){
     TreeNode *root1 = NULL;
     string str1 = hierarchyOrder(root1);
-    LTTestString("{}", str1);
+    EXPECT_STREQ("{}", str1.c_str());
     
     TreeNode *root2 = new TreeNode(1);
     TreeNode *second1 = new TreeNode(2);
@@ -245,17 +236,13 @@ void testHierarchyOrder(){
     second1->left = third1;
     second2->right = third2;
     string str2 = serialize(root2);
-    LTTestString("{1,2,3,4,#,#,5}", str2);
-    
-    printf("test hierarchyOrder end----------------------------------------\n");
+    EXPECT_STREQ("{1,2,3,4,#,#,5}", str2.c_str());
 }
 
-void testSerialize() {
-    printf("test serialize begin-------------------------------------------\n");
-    
+TEST(TreeNodeTest,Serialize){
     TreeNode *root1 = NULL;
     string str1 = serialize(root1);
-    LTTestString("{}", str1);
+    EXPECT_STREQ("{}", str1.c_str());
     
     TreeNode *root2 = new TreeNode(1);
     TreeNode *second1 = new TreeNode(2);
@@ -267,7 +254,5 @@ void testSerialize() {
     second1->left = third1;
     second2->right = third2;
     string str2 = serialize(root2);
-    LTTestString("{1,2,3,4,#,#,5}", str2);
-    
-    printf("test serialize end---------------------------------------------\n");
+    EXPECT_STREQ("{1,2,3,4,#,#,5}", str2.c_str());
 }

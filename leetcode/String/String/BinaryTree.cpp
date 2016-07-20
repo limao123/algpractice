@@ -75,9 +75,6 @@ void testMinDepth() {
  *  @return 最大深度
  */
 int maxDepth(TreeNode *root) {
-    // write your code here
-
-    
     if (root == NULL) {
         return 0;
     }
@@ -93,7 +90,6 @@ int maxDepth(TreeNode *root) {
     } else {
         return depthOfRight + 1;
     }
-
 }
 
 void testMaxDepth(){

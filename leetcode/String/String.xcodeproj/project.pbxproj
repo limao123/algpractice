@@ -10,7 +10,7 @@
 		1B2AEEF81C96986200D3FCB9 /* Greedy.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 1B2AEEF61C96986200D3FCB9 /* Greedy.cpp */; };
 		1B4B8F441C9D2ED900C6A7CD /* LinkedList.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 1B4B8F421C9D2ED900C6A7CD /* LinkedList.cpp */; };
 		1B647AF21D17B31F00C7DFF0 /* LTTest.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 1B647AF01D17B31F00C7DFF0 /* LTTest.cpp */; };
-		1B9A97811D2261CE005DF01F /* TestTreeNode.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 1B9A977F1D2261CE005DF01F /* TestTreeNode.cpp */; };
+		1BE4BAAE1D3F402800F46948 /* TreeNodeTest.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 1BE4BAAD1D3F402800F46948 /* TreeNodeTest.cpp */; };
 		AB3D2FE31C56160B00000BFC /* Queue.cpp in Sources */ = {isa = PBXBuildFile; fileRef = AB3D2FE11C56160B00000BFC /* Queue.cpp */; };
 		AB5F9EBF1D0F040C0095B50B /* BinaryTree.cpp in Sources */ = {isa = PBXBuildFile; fileRef = AB5F9EBD1D0F040C0095B50B /* BinaryTree.cpp */; };
 		AB6D8D121C7F499D00A860C6 /* BinarySearch.cpp in Sources */ = {isa = PBXBuildFile; fileRef = AB6D8D101C7F499D00A860C6 /* BinarySearch.cpp */; };
@@ -44,8 +44,7 @@
 		1B4B8F431C9D2ED900C6A7CD /* LinkedList.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; path = LinkedList.hpp; sourceTree = "<group>"; };
 		1B647AF01D17B31F00C7DFF0 /* LTTest.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = LTTest.cpp; sourceTree = "<group>"; };
 		1B647AF11D17B31F00C7DFF0 /* LTTest.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; path = LTTest.hpp; sourceTree = "<group>"; };
-		1B9A977F1D2261CE005DF01F /* TestTreeNode.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = TestTreeNode.cpp; sourceTree = "<group>"; };
-		1B9A97801D2261CE005DF01F /* TestTreeNode.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; path = TestTreeNode.hpp; sourceTree = "<group>"; };
+		1BE4BAAD1D3F402800F46948 /* TreeNodeTest.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = TreeNodeTest.cpp; sourceTree = "<group>"; };
 		AB3D2FE11C56160B00000BFC /* Queue.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = Queue.cpp; sourceTree = "<group>"; };
 		AB3D2FE21C56160B00000BFC /* Queue.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; path = Queue.hpp; sourceTree = "<group>"; };
 		AB5F9EBD1D0F040C0095B50B /* BinaryTree.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = BinaryTree.cpp; sourceTree = "<group>"; };
@@ -83,19 +82,6 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
-		1B3B4BC71D1913A90076E6CC /* BinaryTree */ = {
-			isa = PBXGroup;
-			children = (
-				AB99F23B1C531EBF005E8C0D /* TreeNode.cpp */,
-				AB99F23C1C531EBF005E8C0D /* TreeNode.hpp */,
-				AB5F9EBD1D0F040C0095B50B /* BinaryTree.cpp */,
-				AB5F9EBE1D0F040C0095B50B /* BinaryTree.hpp */,
-				1B9A977F1D2261CE005DF01F /* TestTreeNode.cpp */,
-				1B9A97801D2261CE005DF01F /* TestTreeNode.hpp */,
-			);
-			name = BinaryTree;
-			sourceTree = "<group>";
-		};
 		1B647AEF1D17B2F000C7DFF0 /* TestFramework */ = {
 			isa = PBXGroup;
 			children = (
@@ -105,11 +91,29 @@
 			name = TestFramework;
 			sourceTree = "<group>";
 		};
+		1B6545EC1D3F5EEC005F07D6 /* scr */ = {
+			isa = PBXGroup;
+			children = (
+				AB99F23B1C531EBF005E8C0D /* TreeNode.cpp */,
+				AB99F23C1C531EBF005E8C0D /* TreeNode.hpp */,
+				AB5F9EBD1D0F040C0095B50B /* BinaryTree.cpp */,
+				AB5F9EBE1D0F040C0095B50B /* BinaryTree.hpp */,
+			);
+			name = scr;
+			sourceTree = "<group>";
+		};
+		1B6545ED1D3F5EF2005F07D6 /* test */ = {
+			isa = PBXGroup;
+			children = (
+				1BE4BAAD1D3F402800F46948 /* TreeNodeTest.cpp */,
+			);
+			name = test;
+			sourceTree = "<group>";
+		};
 		AB4B7B621C4FB34E0003055B /* lintcode */ = {
 			isa = PBXGroup;
 			children = (
 				AB8D0D5F1D1C289500BF02A9 /* Tree */,
-				1B3B4BC71D1913A90076E6CC /* BinaryTree */,
 				AB72E8241C4CBC9400683E98 /* SwapString.cpp */,
 				AB72E8251C4CBC9400683E98 /* SwapString.hpp */,
 				AB6E16A21C4E6FDA00DB403E /* MyArray.cpp */,
@@ -173,6 +177,8 @@
 		AB8D0D5F1D1C289500BF02A9 /* Tree */ = {
 			isa = PBXGroup;
 			children = (
+				1B6545EC1D3F5EEC005F07D6 /* scr */,
+				1B6545ED1D3F5EF2005F07D6 /* test */,
 			);
 			name = Tree;
 			sourceTree = "<group>";
@@ -240,11 +246,11 @@
 				1B4B8F441C9D2ED900C6A7CD /* LinkedList.cpp in Sources */,
 				ABF1B7E01C8330720073BD06 /* DoublyListNode.cpp in Sources */,
 				AB8F8F8E1C8000A800877B8E /* HighQualityCode.cpp in Sources */,
-				1B9A97811D2261CE005DF01F /* TestTreeNode.cpp in Sources */,
 				AB99F23D1C531EBF005E8C0D /* TreeNode.cpp in Sources */,
 				AB99F2371C5221D6005E8C0D /* BaseKnowledge.cpp in Sources */,
 				1B647AF21D17B31F00C7DFF0 /* LTTest.cpp in Sources */,
 				AB6D8D121C7F499D00A860C6 /* BinarySearch.cpp in Sources */,
+				1BE4BAAE1D3F402800F46948 /* TreeNodeTest.cpp in Sources */,
 				AB5F9EBF1D0F040C0095B50B /* BinaryTree.cpp in Sources */,
 				AB72E8261C4CBC9400683E98 /* SwapString.cpp in Sources */,
 				AB6E16A41C4E6FDA00DB403E /* MyArray.cpp in Sources */,
