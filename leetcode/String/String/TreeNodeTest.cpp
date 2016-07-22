@@ -256,3 +256,4 @@ TEST(TreeNodeTest,Serialize){
     string str2 = serialize(root2);
     EXPECT_STREQ("{1,2,3,4,#,#,5}", str2.c_str());
 }
+

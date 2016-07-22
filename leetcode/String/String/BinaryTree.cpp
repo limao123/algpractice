@@ -92,31 +92,6 @@ int maxDepth(TreeNode *root) {
     }
 }
 
-void testMaxDepth(){
-    printf("test maxDepth begin--------------------------------------------\n");
-    TreeNode *nullTree = deserialize("{}");
-    int depth1 = maxDepth(nullTree);
-    LTTest(0, depth1);
-    
-    TreeNode *oneTree = deserialize("{1}");
-    int depth2 = maxDepth(oneTree);
-    LTTest(1, depth2);
-    
-    TreeNode *twoTree = deserialize("{1,2,3}");
-    int depth3 = maxDepth(twoTree);
-    LTTest(2, depth3);
-    
-    TreeNode *leftTree = deserialize
-    ("{1,2,#,3,#,4}");
-    int depth4 = maxDepth(leftTree);
-    LTTest(4, depth4);
-    
-    TreeNode *rightTree = deserialize("{1,#,2,#,3,#,4}");
-    int depth5 = maxDepth(rightTree);
-    LTTest(4, depth5);
-    
-    printf("test maxDepth end----------------------------------------------\n");
-}
 
 /**
  *  给定一个二叉树,确定它是高度平衡的。对于这个问题,一棵高度平衡的二叉树的定义是：一棵二叉树中每个节点的两个子树的深度相差不会超过1。时间复杂度O(n) 空间复杂度O(n)
