@@ -34,5 +34,26 @@ TEST(BinaryTreeTest, maxDepth){
     TreeNode *rightTree = deserialize("{1,#,2,#,3,#,4}");
     int depth5 = maxDepth(rightTree);
     EXPECT_EQ(4, depth5);
+    
+}
 
+TEST(BinaryTreeTest, isBalanced){
+    TreeNode *nullTree = deserialize("{}");
+    EXPECT_TRUE(isBalanced(nullTree));
+
+    
+    TreeNode *oneTree = deserialize("{1}");
+    EXPECT_TRUE(isBalanced(oneTree));
+
+    
+    TreeNode *oneLeftTree = deserialize("{1,2}");
+    EXPECT_TRUE(isBalanced(oneLeftTree));
+
+    
+    TreeNode *oneRightTree = deserialize("{1,#,2}");
+    EXPECT_TRUE(isBalanced(oneRightTree));
+
+    
+    TreeNode *leftThreeTree = deserialize("{1,2,#,3}");
+    EXPECT_FALSE(isBalanced(leftThreeTree));
 }

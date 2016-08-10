@@ -9,6 +9,25 @@
 #include "BinaryTree.hpp"
 #include "LTTest.hpp"
 
+/**
+ * @param root: The root of binary tree.
+ * @return: Preorder in vector which contains node values.
+ */
+vector<int> preorderTraversal(TreeNode *root) {
+    // write your code here
+    vector<int> result;
+    if (root != NULL) {
+        vector<int> left = preorderTraversal(root->left);
+        vector<int> right = preorderTraversal(root->right);
+        
+        result.push_back(root->val);
+        result.insert(result.end(), left.begin(),left.end());
+        result.insert(result.end(), right.begin(),right.end());
+    }
+    return result;
+}
+
+
 
 /**
  *  二叉树的最小深度，时间复杂度:O(n) 空间复杂度O(n)
@@ -112,24 +131,6 @@ bool isBalanced(TreeNode *root) {
     }
 }
 
-void testIsBalanced() {
-    printf("test isBalanced begin------------------------------------------\n");
-    TreeNode *nullTree = deserialize("{}");
-    LTTestBool(true, isBalanced(nullTree));
-    
-    TreeNode *oneTree = deserialize("{1}");
-    LTTestBool(true, isBalanced(oneTree));
-    
-    TreeNode *oneLeftTree = deserialize("{1,2}");
-    LTTestBool(true, isBalanced(oneLeftTree));
-    
-    TreeNode *oneRightTree = deserialize("{1,#,2}");
-    LTTestBool(true, isBalanced(oneRightTree));
-    
-    TreeNode *leftThreeTree = deserialize("{1,2,#,3}");
-    LTTestBool(false, isBalanced(leftThreeTree));
-    printf("test isBalanced end--------------------------------------------\n");
-}
 
 /**
  * @param root: The root of the binary search tree.
