@@ -27,6 +27,100 @@ vector<int> preorderTraversal(TreeNode *root) {
     return result;
 }
 
+/**
+ * @param root: The root of binary tree.
+ * @return: Preorder in vector which contains node values.
+ */
+vector<int> preorderTraversalNonrecursive(TreeNode *root) {
+    vector<int> result;
+    if (root != NULL) {
+        stack<TreeNode *> s;
+        s.push(root);
+        while (!s.empty()) {
+            TreeNode *temp = s.top();
+            s.pop();
+            
+            result.push_back(temp->val);
+            
+            if (temp->right) {
+                s.push(temp->right);
+            }
+            
+            if (temp->left) {
+                s.push(temp->left);
+            }
+        }
+    }
+    return result;
+}
+
+vector<int> inorderTraversalNonrecursive(TreeNode *root) {
+    vector<int> result;
+    if (root != NULL) {
+        stack<TreeNode *> s;
+        TreeNode *temp = root;
+        while (temp != NULL || !s.empty()) {
+            if (temp != NULL ) {
+                s.push(temp);
+                temp = temp->left;
+            } else {
+                temp = s.top();
+                s.pop();
+                result.push_back(temp->val);
+                temp = temp->right;
+            }
+        }
+    }
+    return result;
+    // write your code here
+}
+
+vector<int> postorderTraversalNonrecursive(TreeNode *root) {
+    vector<int> result;
+    if (root != NULL) {
+        TreeNode *currentNode = NULL ;
+        TreeNode *prev = NULL;
+        stack<TreeNode *> s;
+        s.push(root);
+        
+        while(!s.empty()){
+            currentNode = s.top();
+            
+            /* case 1. We are nmoving down the tree. */
+            if(prev == NULL || prev->left == currentNode || prev->right == currentNode){
+                if(currentNode->left){
+                    push(&ms,currentNode->left);
+                } else if(currentNode->right) {
+                    push(&ms,currentNode->right);
+                }
+                else {
+                    /* If node is leaf node */
+                    printf("%d ", currentNode->value);
+                    pop(&ms);
+                }
+            }
+            /* case 2. We are moving up the tree from left child */
+            if(currentNode->left == prev){
+                if(currentNode->right)
+                    push(&ms,currentNode->right);
+                else {
+                    printf("%d ", currentNode->value);
+                    pop(&ms);
+                }
+            }
+            
+            /* case 3. We are moving up the tree from right child */
+            if(currentNode->right == prev){
+                printf("%d ", currentNode->value);
+                pop(&ms);
+            }
+            prev = currentNode;
+        }
+    }
+    return result;
+    // write your code here
+}
+
 
 
 /**
@@ -173,12 +267,12 @@ void preorderTraversal(TreeNode *root,vector<int> &vector){
  * @param root: The root of binary tree.
  * @return: Preorder in vector which contains node values.
  */
-vector<int> preorderTraversal(TreeNode *root) {
-    // write your code here
-    vector<int> result;
-    preorderTraversal(root, result);
-    return result;
-}
+//vector<int> preorderTraversal(TreeNode *root) {
+//    // write your code here
+//    vector<int> result;
+//    preorderTraversal(root, result);
+//    return result;
+//}
 
 bool isValidBST(TreeNode *root, long long min, long long max){
     if (root == NULL) {
@@ -198,27 +292,27 @@ bool isValidBST(TreeNode *root, long long min, long long max){
  */
 bool isValidBST(TreeNode *root) {
     // write your code here
-//    if ((root == NULL) ||
-//        ((root->left == NULL) && (root->right == NULL))) {
-//        return true;
-//    }
-//    
-//    if ((root->left == NULL) && (root->val < root->right->val)) {
-//        return isValidBST(root->right);
-//    } else if (root->right == NULL && root->val > root->left->val){
-//        return isValidBST(root->left);
-//    } else if (root->val > root->left->val && root->val < root->right->val){
-//        return isValidBST(root->left) && isValidBST(root->right);
-//    } else {
-//        return false;
-//    }
+    //    if ((root == NULL) ||
+    //        ((root->left == NULL) && (root->right == NULL))) {
+    //        return true;
+    //    }
+    //
+    //    if ((root->left == NULL) && (root->val < root->right->val)) {
+    //        return isValidBST(root->right);
+    //    } else if (root->right == NULL && root->val > root->left->val){
+    //        return isValidBST(root->left);
+    //    } else if (root->val > root->left->val && root->val < root->right->val){
+    //        return isValidBST(root->left) && isValidBST(root->right);
+    //    } else {
+    //        return false;
+    //    }
     return isValidBST(root, LONG_LONG_MIN, LONG_LONG_MAX);
     
 }
 
 vector<vector<int>> levelOrder(TreeNode *root) {
     // write your code here
-
+    
     
     vector<vector<int>> results;
     if (root == NULL) {
@@ -245,7 +339,7 @@ vector<vector<int>> levelOrder(TreeNode *root) {
         q1.swap(q2);
     }
     
-
+    
     
     return results;
 }
