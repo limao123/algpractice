@@ -28,6 +28,7 @@ bool isBalanced(TreeNode *root);
 
 TreeNode* insertNode(TreeNode* root, TreeNode* node);
 vector<int> preorderTraversal(TreeNode *root);
+vector<int> postorderTraversalNonrecursive(TreeNode *root);
 bool isValidBST(TreeNode *root);
 vector<vector<int>> levelOrder(TreeNode *root);
 vector<int> searchRange(TreeNode* root, int k1, int k2);

@@ -57,3 +57,8 @@ TEST(BinaryTreeTest, isBalanced){
     TreeNode *leftThreeTree = deserialize("{1,2,#,3}");
     EXPECT_FALSE(isBalanced(leftThreeTree));
 }
+
+TEST(BinaryTreeTest, postorderTraversalNonrecursive){
+    TreeNode *test1 = deserialize("{1,#,2,3}");
+    vector<int> restul = postorderTraversalNonrecursive(test1);
+}

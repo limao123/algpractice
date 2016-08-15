@@ -86,39 +86,39 @@ vector<int> postorderTraversalNonrecursive(TreeNode *root) {
         while(!s.empty()){
             currentNode = s.top();
             
-            /* case 1. We are nmoving down the tree. */
+            /* case 1. We are moving down the tree. */
             if(prev == NULL || prev->left == currentNode || prev->right == currentNode){
                 if(currentNode->left){
-                    push(&ms,currentNode->left);
+                    s.push(currentNode->left);
                 } else if(currentNode->right) {
-                    push(&ms,currentNode->right);
-                }
-                else {
+                    s.push(currentNode->right);
+                } else {
                     /* If node is leaf node */
-                    printf("%d ", currentNode->value);
-                    pop(&ms);
+                    result.push_back(currentNode->val);
+                    s.pop();
                 }
+                
             }
+            
             /* case 2. We are moving up the tree from left child */
-            if(currentNode->left == prev){
-                if(currentNode->right)
-                    push(&ms,currentNode->right);
-                else {
-                    printf("%d ", currentNode->value);
-                    pop(&ms);
+            if(prev != NULL && currentNode->left == prev){
+                if(currentNode->right){
+                    s.push(currentNode->right);
+                } else {
+                    result.push_back(currentNode->val);
+                    s.pop();
                 }
             }
             
             /* case 3. We are moving up the tree from right child */
-            if(currentNode->right == prev){
-                printf("%d ", currentNode->value);
-                pop(&ms);
+            if(prev != NULL && currentNode->right == prev){
+                result.push_back(currentNode->val);
+                s.pop();
             }
             prev = currentNode;
         }
     }
     return result;
-    // write your code here
 }
 
 
