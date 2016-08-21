@@ -284,6 +284,8 @@ bool isValidBST(TreeNode *root, long long min, long long max){
     }
     
     return isValidBST(root->left, min, root->val) && isValidBST(root->right, root->val, max);
+    
+    
 }
 
 /**
@@ -291,6 +293,8 @@ bool isValidBST(TreeNode *root, long long min, long long max){
  * @return: True if the binary tree is BST, or false
  */
 bool isValidBST(TreeNode *root) {
+    
+    
     // write your code here
     //    if ((root == NULL) ||
     //        ((root->left == NULL) && (root->right == NULL))) {
@@ -306,7 +310,32 @@ bool isValidBST(TreeNode *root) {
     //    } else {
     //        return false;
     //    }
-    return isValidBST(root, LONG_LONG_MIN, LONG_LONG_MAX);
+//    return isValidBST(root, LONG_LONG_MIN, LONG_LONG_MAX);
+    
+    //迭代
+    
+    if (root != NULL) {
+        stack<TreeNode *> s;
+        TreeNode *curr = root;
+        TreeNode *pre = NULL;
+        while (curr != NULL || !s.empty()) {
+            if (curr != NULL ) {
+                s.push(curr);
+                curr = curr->left;
+            } else {
+                curr = s.top();
+                s.pop();
+                
+                if (pre != NULL && pre->val >= curr ->val) {
+                    return false;
+                }
+                
+                pre = curr;
+                curr = curr->right;
+            }
+        }
+    }
+    return true;
     
 }
 
@@ -345,15 +374,36 @@ vector<vector<int>> levelOrder(TreeNode *root) {
 }
 
 void searchRange(TreeNode* root, int k1, int k2,vector<int> &result){
-    if (root == NULL) {
-        return;
-    }
+//    if (root == NULL) {
+//        return;
+//    }
     
-    searchRange(root->left, k1, k2,result);
-    if (root->val >= k1 && root->val <= k2) {
-        result.push_back(root->val);
+//    searchRange(root->left, k1, k2,result);
+//    if (root->val >= k1 && root->val <= k2) {
+//        result.push_back(root->val);
+//    }
+//    searchRange(root->right, k1, k2,result);
+    
+    if (root != NULL) {
+        stack<TreeNode *> s;
+        TreeNode *curr = root;
+        TreeNode *pre = NULL;
+        while (curr != NULL || !s.empty()) {
+            if (curr != NULL ) {
+                s.push(curr);
+                curr = curr->left;
+            } else {
+                curr = s.top();
+                s.pop();
+                
+                if (curr->val <= k1 && curr->val <= k2) {
+                    result.push_back(curr->val);
+                }
+
+                curr = curr->right;
+            }
+        }
     }
-    searchRange(root->right, k1, k2,result);
 }
 
 vector<int> searchRange(TreeNode* root, int k1, int k2) {
