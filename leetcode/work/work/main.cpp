@@ -56,27 +56,34 @@ bool isMod7(string s){
 
 int main(int argc, const char * argv[]) {
     // insert code here...
-    int count;
-    scanf("%d",&count);
-    for (int i = 0; i < count ; i++) {
-        int result = 0;
-        long long left;
-        long long right;
-        scanf("%lld %lld",&left,&right);
-        for (; left <= right; left++) {
-            
-            char num[30];
-            sprintf(num,"%lld", abs(left));
-            string numStr = num;
-            if (isMod7(numStr) &&
-                isContain235(numStr) &&
-                !isContain18(numStr)) {
-                result++;
-                printf("%s\n",num);
-            }
-            
-        }
-        printf("%d\n",result);
+//    int count;
+//    scanf("%d",&count);
+//    for (int i = 0; i < count ; i++) {
+//        int result = 0;
+//        long long left;
+//        long long right;
+//        scanf("%lld %lld",&left,&right);
+//        for (; left <= right; left++) {
+//            
+//            char num[30];
+//            sprintf(num,"%lld", abs(left));
+//            string numStr = num;
+//            if (isMod7(numStr) &&
+//                isContain235(numStr) &&
+//                !isContain18(numStr)) {
+//                result++;
+//                printf("%s\n",num);
+//            }
+//            
+//        }
+//        printf("%d\n",result);
+//    }
+    
+    string a = "一";
+    
+    for (int i = 0; i < a.length(); i++) {
+        printf("%c\n",a[i]);
     }
+    
     return 0;
 }
