@@ -34,3 +34,53 @@ vector<vector<int> > combine(int n, int k) {
     return result;
 }
 
+/**
+ * @param nums: A list of integers.
+ * @return: A list of permutations.
+ */
+vector<vector<int> > permute(vector<int> nums) {
+    // write your code here
+//    vector<vector<int> > result;
+//    
+//    if (nums.size() == 1) {
+//        result.push_back(nums);
+//        return result;
+//    }
+//    
+//    for (int i = 0; i < nums.size(); ++i) {
+//        //消除第i个数据，递归找出剩余数据的全排队
+//        vector<int> nums_new = nums;
+//        nums_new.erase(nums_new.begin() + i);
+//        vector<vector<int> > res_tmp = permute(nums_new);
+//
+//        for (int j = 0; j < res_tmp.size(); ++j) {
+//        
+//            vector<int> temp = res_tmp[j];
+//            //将消除的数据放在末位
+//            temp.push_back(nums[i]);
+//            result.push_back(temp);
+//        }
+//    }
+//    
+//    return result;
+    
+    
+    vector<vector<int>> result;
+    if (nums.size() == 1) {
+        result.push_back(nums);
+        return result;
+    }
+    
+    for (int i = 0; i < nums.size(); i++) {
+        vector<int> subNums = nums;
+        subNums.erase(subNums.begin()+i);
+        
+        vector<vector<int>> subResult = permute(subNums);
+        for (int j = 0; j < subResult.size(); j++) {
+            vector<int> temp = subResult[j];
+            temp.push_back(nums[i]);
+            result.push_back(temp);
+        }
+    }
+    return result;
+}

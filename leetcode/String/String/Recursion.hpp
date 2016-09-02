@@ -14,5 +14,5 @@
 using namespace std;
 
 vector<vector<int> > combine(int n, int k);
-
+vector<vector<int> > permute(vector<int> nums);
 #endif /* Recursion_hpp */
