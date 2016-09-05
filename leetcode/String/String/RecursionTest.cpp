@@ -20,3 +20,9 @@ TEST(Recursion, permute){
     vector<int> v1(ary1,ary1+3);
     vector<vector<int>> result1 = permute(v1);
 }
+
+TEST(Recursion, permuteNonrecursive){
+    int ary1[3] = {1,2,3};
+    vector<int> v1(ary1,ary1+3);
+    vector<vector<int>> result1 = permuteNonRecursive(v1);
+}

@@ -14,4 +14,5 @@
 using namespace std;
 
 bool anagram(string s, string t);
+bool compareStrings(string A, string B);
 #endif /* String_hpp */

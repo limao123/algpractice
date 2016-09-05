@@ -10,28 +10,12 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "String/RecursionTest.cpp"
-            timestampString = "494502602.615169"
+            timestampString = "494761745.618394"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "21"
-            endingLineNumber = "21"
-            landmarkName = "TEST(Recursion, permute)"
-            landmarkType = "7">
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
-            shouldBeEnabled = "Yes"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
-            filePath = "String/Recursion.cpp"
-            timestampString = "494503304.897853"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "62"
-            endingLineNumber = "62"
-            landmarkName = "permute(vector&lt;int&gt; nums)"
+            startingLineNumber = "27"
+            endingLineNumber = "27"
+            landmarkName = "TEST(Recursion, permuteNonrecursive)"
             landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>

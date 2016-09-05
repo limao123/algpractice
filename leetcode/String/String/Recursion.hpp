@@ -15,4 +15,5 @@ using namespace std;
 
 vector<vector<int> > combine(int n, int k);
 vector<vector<int> > permute(vector<int> nums);
+vector<vector<int> > permuteNonRecursive(vector<int>& nums)
 #endif /* Recursion_hpp */
