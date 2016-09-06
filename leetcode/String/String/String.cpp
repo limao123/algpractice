@@ -30,10 +30,12 @@ bool anagram(string s, string t) {
     return true;
 }
 
-//lintcode 55,此处限制了A、B都由大写字母组成，如果不受这个限制则可以使用1方法，
+//lintcode 55,此处限制了A、B都由大写字母组成，如果不受这个限制则可以使用2方法，
 //另外要注意跟面试官确认好，如果B为空是否算作包含，此处假定是算作包含的
 bool compareStrings(string A, string B) {
     // write your code here
+    
+    //解决1
 //    int a[26] = {0};
 //    for (int i = 0; i < A.length(); i++) {
 //        a[A[i]-'A']++;
@@ -51,6 +53,7 @@ bool compareStrings(string A, string B) {
 //    }
 //    return true;
     
+    //解法2
     if (A.size() < B.size()) {
         return false;
     }
