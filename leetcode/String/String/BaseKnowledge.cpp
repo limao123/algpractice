@@ -15,6 +15,28 @@
 //    return m_pInstance;
 //}
 
+bool searchMatrix(vector<vector<int> > &matrix, int target) {
+    // write your code here
+    if (matrix.size() == 0 || matrix[0].size() == 0) {
+        return false;
+    }
+    
+    int i = 0;
+    int j = (int)(matrix[0].size()) - 1;
+    bool isFound = false;
+    while (i < (int)matrix.size() && j >= 0) {
+        if (target == matrix[i][j]) {
+            isFound = true;
+            break;
+        } else if (target < matrix[i][j]) {
+            j--;
+        } else {
+            i++;
+        }
+    }
+    return isFound;
+}
+
 /**
  * @param matrix: A list of lists of integers
  * @param target: An integer you want to search in matrix
