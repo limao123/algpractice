@@ -77,7 +77,8 @@ vector<vector<int> > permuteNonRecursive(vector<int>& nums) {
     
     // sort nums first
     sort(nums.begin(), nums.end());
-    while (1) {
+    while (1)
+    {
         result.push_back(nums);
         
         // step1: find nums[i] < nums[i + 1]
