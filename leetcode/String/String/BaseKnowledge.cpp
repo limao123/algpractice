@@ -99,6 +99,32 @@ int BaseKnowledge::replaceBlank(char string[], int length) {
     return replaceLength;
 }
 
+int replaceBlank(char string[],int length) {
+    if (string == NULL || length == 0) {
+        return 0;
+    }
+    
+    int replaceLength = length;
+    for (int i = 0; i < length; i++) {
+        if (string[i] == ' ') {
+            replaceLength += 2;
+        }
+    }
+    
+ 
+    for (int replaceIndex = replaceLength-1, originIndex = length-1; originIndex >= 0; originIndex--) {
+        if (string[originIndex] == ' ') {
+            string[replaceIndex--] = '0';
+            string[replaceIndex--] = '2';
+            string[replaceIndex--] = '%';
+        } else {
+            string[replaceIndex--] = string[originIndex];
+        }
+    }
+    return replaceLength;
+}
+
+
 ListNode * BaseKnowledge::reverse(ListNode *head) {
     // write your code here
     if (head == NULL) {
@@ -120,6 +146,10 @@ ListNode * BaseKnowledge::reverse(ListNode *head) {
         nodes.pop();
     }
     return newHeader;
+}
+
+ListNode * BaseKnowledge::reverse(ListNode *head) {
+
 }
 
 /**
