@@ -148,8 +148,25 @@ ListNode * BaseKnowledge::reverse(ListNode *head) {
     return newHeader;
 }
 
-ListNode * BaseKnowledge::reverse(ListNode *head) {
-
+ListNode *reverse(ListNode *head) {
+    if (head == NULL) {
+        return NULL;
+    }
+    
+    stack<ListNode *> nodes;
+    ListNode *pNode = head;
+    while (pNode->next != NULL) {
+        nodes.push(pNode);
+        pNode = pNode->next;
+    }
+    
+    ListNode *newHead = pNode;
+    while (!nodes.empty()) {
+        pNode->next = nodes.top();
+        pNode = pNode->next;
+        nodes.pop();
+    }
+    return newHead;
 }
 
 /**
