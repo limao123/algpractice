@@ -148,12 +148,48 @@ void testSearchRange() {
     vector<int> result = searchRange(root, 10, 22);
 }
 
+//#define Mul(x,y) ++x*++y
 
+struct A{
+    bool b;
+    int arr[2];
+    int i;
+    int j;
+};
+
+//int encode(const char *str)
+//{
+//    int len = 0;
+//    int index = 0;
+//    int factor[] = {1+25+25*25+25*25*25, 1+25+25*25, 1+25, 1};
+//    while(*str){
+//        index += factor[len] * (*str - 'a');
+//        len++;
+//        *str++;
+//    }
+//    return index + (len - 1);
+//}
+
+int factor[]={25*25*25+25*25+25+1,25*25+25+1,25+1,1};
+int encode(char *str)
+{
+    int len=strlen(str);
+    int index=len-1;
+    for(int i=0;i<len;++i)
+    {
+        index+=factor[i]*(str[i]-'a');
+    }
+    return index;
+}
+
+int checkFirstAndSetSceond(int firstID,int secondID) {
+    
+}
 
 int main(int argc,char ** argv) {
 //    testing::AddGlobalTestEnvironment(new TestTreeNode);
-    testing::InitGoogleTest(&argc, argv);
-    return RUN_ALL_TESTS();
+//    testing::InitGoogleTest(&argc, argv);
+//    return RUN_ALL_TESTS();
     
 //    testLinkedList();
 //    testLinkedList();
@@ -218,4 +254,30 @@ int main(int argc,char ** argv) {
 //    testPostOrder();
 //    testPostOrderNonrecursive();
 //    return 0;
+//    int m[] = {1,2,3,4,5,6,7,8,9,0};
+//    int (*p)[4] = (int (*)[4])m;
+//    printf("%d",p[1][2]);
+//    int a = 1,b = 2, c = 3;
+//    printf("%d",Mul(a+b,b+c));
+//    printf("%d",++a+b*++b+c);
+//    A a;
+//    a.b = false;
+//    a.arr[0] = 1;
+//    a.arr[1] = 2;
+//    a.i = 20;
+//    a.j = 30;
+//    *(a.arr + 1) = 40;
+//    A* p = 0;
+//    unsigned int q = (unsigned int)(&(p->i));
+//    (*(int*)((char*)&a+q)) = -50;
+//    int *p = NULL;
+//    int a[] = {1,2,3,4};
+//    p = a;
+//    *(p++) += 100;
+//    printf("%d %d %d %d %d",p.a[0])
+    printf("%d\n",encode("a"));
+    printf("%d\n",encode("aa"));
+    printf("%d\n",encode("baca"));
+
+    return 0;
 }
