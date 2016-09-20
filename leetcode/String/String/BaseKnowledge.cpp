@@ -198,7 +198,7 @@ TreeNode * buildTreeCore(vector<int> &preorder, vector<int> &inorder,int preStar
     return root;
 }
 
-TreeNode* BaseKnowledge::buildTree(vector<int> &preorder, vector<int> &inorder) {
+TreeNode* buildTree(vector<int> &preorder, vector<int> &inorder) {
     // write your code here
     if (preorder.size() <= 0 ||
         inorder.size() <= 0  ||

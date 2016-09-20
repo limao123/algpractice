@@ -17,7 +17,7 @@
 #include "DoublyListNode.hpp"
 using namespace std;
 
-
+TreeNode* buildTree(vector<int> &preorder, vector<int> &inorder);
 
 class BaseKnowledge {
     
@@ -33,7 +33,6 @@ public:
     static int searchMatrix(vector<vector<int> > &matrix, int target);
     static int replaceBlank(char string[], int length);
     static ListNode *reverse(ListNode *head);
-    static TreeNode *buildTree(vector<int> &preorder, vector<int> &inorder);
     static int fibonacci(int n);
     static int countOnes(int num);
     static int findMin(vector<int> &num);
