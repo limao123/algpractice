@@ -14,6 +14,7 @@
 		1BB2722B1D73E9750074535D /* Recursion.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 1BB272291D73E9750074535D /* Recursion.cpp */; };
 		1BDF34191D41CE6600EAC994 /* BinaryTreeTest.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 1BDF34171D41CE6600EAC994 /* BinaryTreeTest.cpp */; };
 		1BE4BAAE1D3F402800F46948 /* TreeNodeTest.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 1BE4BAAD1D3F402800F46948 /* TreeNodeTest.cpp */; };
+		1BF98AD71D9287FE00E250E1 /* BaseKnowledgeTest.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 1BF98AD61D9287FE00E250E1 /* BaseKnowledgeTest.cpp */; };
 		AB38098C1D79D62A001B2AAC /* String.cpp in Sources */ = {isa = PBXBuildFile; fileRef = AB38098A1D79D62A001B2AAC /* String.cpp */; };
 		AB3D2FE31C56160B00000BFC /* Queue.cpp in Sources */ = {isa = PBXBuildFile; fileRef = AB3D2FE11C56160B00000BFC /* Queue.cpp */; };
 		AB5F9EBF1D0F040C0095B50B /* BinaryTree.cpp in Sources */ = {isa = PBXBuildFile; fileRef = AB5F9EBD1D0F040C0095B50B /* BinaryTree.cpp */; };
@@ -53,6 +54,7 @@
 		1BB2722A1D73E9750074535D /* Recursion.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; path = Recursion.hpp; sourceTree = "<group>"; };
 		1BDF34171D41CE6600EAC994 /* BinaryTreeTest.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = BinaryTreeTest.cpp; sourceTree = "<group>"; };
 		1BE4BAAD1D3F402800F46948 /* TreeNodeTest.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = TreeNodeTest.cpp; sourceTree = "<group>"; };
+		1BF98AD61D9287FE00E250E1 /* BaseKnowledgeTest.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = BaseKnowledgeTest.cpp; sourceTree = "<group>"; };
 		AB38098A1D79D62A001B2AAC /* String.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = String.cpp; sourceTree = "<group>"; };
 		AB38098B1D79D62A001B2AAC /* String.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; path = String.hpp; sourceTree = "<group>"; };
 		AB3D2FE11C56160B00000BFC /* Queue.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = Queue.cpp; sourceTree = "<group>"; };
@@ -165,8 +167,9 @@
 		AB4B7B631C4FB35C0003055B /* CodingInterviews  */ = {
 			isa = PBXGroup;
 			children = (
-				AB99F2351C5221D6005E8C0D /* BaseKnowledge.cpp */,
 				AB99F2361C5221D6005E8C0D /* BaseKnowledge.hpp */,
+				AB99F2351C5221D6005E8C0D /* BaseKnowledge.cpp */,
+				1BF98AD61D9287FE00E250E1 /* BaseKnowledgeTest.cpp */,
 				AB99F2381C525AC8005E8C0D /* ListNode.cpp */,
 				AB99F2391C525AC8005E8C0D /* ListNode.hpp */,
 				AB3D2FE11C56160B00000BFC /* Queue.cpp */,
@@ -284,6 +287,7 @@
 				AB99F23D1C531EBF005E8C0D /* TreeNode.cpp in Sources */,
 				AB99F2371C5221D6005E8C0D /* BaseKnowledge.cpp in Sources */,
 				1B647AF21D17B31F00C7DFF0 /* LTTest.cpp in Sources */,
+				1BF98AD71D9287FE00E250E1 /* BaseKnowledgeTest.cpp in Sources */,
 				AB6D8D121C7F499D00A860C6 /* BinarySearch.cpp in Sources */,
 				1BE4BAAE1D3F402800F46948 /* TreeNodeTest.cpp in Sources */,
 				AB5F9EBF1D0F040C0095B50B /* BinaryTree.cpp in Sources */,

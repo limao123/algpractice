@@ -354,5 +354,13 @@ DoublyListNode* BaseKnowledge::bstToDoublyList(TreeNode* root) {
     return NULL;
 }
 
-
+int countOnes(int num) {
+    // write your code here
+    int count = 0;
+    while (num) {
+        count++;
+        num = num & (num - 1);
+    }
+    return count;
+}
 

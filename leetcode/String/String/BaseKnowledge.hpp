@@ -18,6 +18,8 @@
 using namespace std;
 
 TreeNode* buildTree(vector<int> &preorder, vector<int> &inorder);
+int countOnes(int num);
+
 
 class BaseKnowledge {
     

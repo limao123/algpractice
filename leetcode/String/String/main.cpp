@@ -20,6 +20,7 @@
 #include "gtest/gtest.h"
 
 
+
 using namespace std;
 
 //#include "gtest/gtest.h"
@@ -181,15 +182,15 @@ int encode(char *str)
     }
     return index;
 }
-
-int checkFirstAndSetSceond(int firstID,int secondID) {
-    
-}
+//
+//int checkFirstAndSetSceond(int firstID,int secondID) {
+//    
+//}
 
 int main(int argc,char ** argv) {
-//    testing::AddGlobalTestEnvironment(new TestTreeNode);
-//    testing::InitGoogleTest(&argc, argv);
-//    return RUN_ALL_TESTS();
+//    testing::AddGlobalTestEnvironment(new TreeNodeTest);
+    testing::InitGoogleTest(&argc, argv);
+    return RUN_ALL_TESTS();
     
 //    testLinkedList();
 //    testLinkedList();
@@ -275,9 +276,9 @@ int main(int argc,char ** argv) {
 //    p = a;
 //    *(p++) += 100;
 //    printf("%d %d %d %d %d",p.a[0])
-    printf("%d\n",encode("a"));
-    printf("%d\n",encode("aa"));
-    printf("%d\n",encode("baca"));
-
-    return 0;
+//    printf("%d\n",encode("a"));
+//    printf("%d\n",encode("aa"));
+//    printf("%d\n",encode("baca"));
+//
+//    return 0;
 }
