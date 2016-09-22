@@ -28,3 +28,13 @@ TEST(BaseKnowledgeTest, countOnes) {
     //1023 = 1111111111b
     EXPECT_EQ(10, countOnes(1023));
 }
+
+TEST(BaseKnowledgeTest, QueueImplementByStack) {
+    MyQueue queue;
+    queue.push(1);
+    queue.push(2);
+    EXPECT_EQ(1,queue.top());
+    EXPECT_EQ(1,queue.pop());
+    EXPECT_EQ(2,queue.top());
+    EXPECT_EQ(2,queue.pop());
+}
