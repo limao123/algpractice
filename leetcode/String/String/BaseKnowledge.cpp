@@ -334,6 +334,44 @@ int BaseKnowledge::findMin(vector<int> &num) {
     return num[mid];
 }
 
+//默认有值
+int findMin(vector<int> &num) {
+    
+//    //无相同数据
+    unsigned left = 0;
+    unsigned right = (unsigned)num.size() - 1;
+    unsigned mid = left;
+    while (left + 1 < right) {
+        mid = (left + right)/2;
+        if (num[left] > num[mid]) {
+            left = mid;
+        } else {
+            right = mid;
+        }
+    }
+    
+    
+    
+//    unsigned left = 0;
+//    unsigned right = (unsigned)num.size() - 1;
+//    unsigned mid = left;
+//    while (num[left] >= num[right]) {
+//        if (left + 1 == right) {
+//            mid = right;
+//            break;
+//        }
+//        
+//        mid = (left + right)/2;
+//        
+//        if (num[left] <= num[mid]) {
+//            left = mid;
+//        } else if (num[mid] <= num[right]) {
+//            right = mid;
+//        }
+//    }
+//    return num[mid];
+}
+
 
 //第4章
 DoublyListNode* BaseKnowledge::bstToDoublyList(TreeNode* root) {
