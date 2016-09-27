@@ -343,13 +343,20 @@ int findMin(vector<int> &num) {
     unsigned mid = left;
     while (left + 1 < right) {
         mid = (left + right)/2;
-        if (num[left] > num[mid]) {
-            left = mid;
-        } else {
+        if (num[mid] < num[right]) {
             right = mid;
+        } else {
+            left = mid;
         }
     }
     
+    //如果是1，2，3这种升序情况，最后应该返回num[left],如果是3，4，5，1，2这种情况，则会返回num[right]，最后l一定是指向最大值，r指向最小值。
+    if (num[left] < num[right]) {
+        return num[left];
+    } else {
+        return num[right];
+    }
+
     
     
 //    unsigned left = 0;

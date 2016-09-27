@@ -62,6 +62,7 @@ TEST(BaseKnowledgeTest, findMin) {
     EXPECT_EQ(1, findMin(v5));
     
     //重复数据
+    /*
     int ary6[5] = {1,1,1,1,1};
     vector<int> v6(ary6,ary6+5);
     EXPECT_EQ(1, findMin(v6));
@@ -69,4 +70,5 @@ TEST(BaseKnowledgeTest, findMin) {
     int ary7[5] = {1,1,0,1,1};
     vector<int> v7(ary7,ary7+5);
     EXPECT_EQ(1, findMin(v7));
+     */
 }
