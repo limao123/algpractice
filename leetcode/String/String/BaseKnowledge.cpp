@@ -409,3 +409,20 @@ int countOnes(int num) {
     return count;
 }
 
+
+vector<int> numbersByRecursion(int n) {
+    // write your code here
+    vector<int> ret;
+    int base = 1;
+    for (int i = 1; i <= n; i++) {
+        for (int j = 0; j < 10; j++) {
+            //添加10,20..,100,200之类的数
+            ret.push_back(j*base);
+            for (int k = 0; k < ret.size(); k++) {
+                ret.push_back(j*base+ret[k]);
+            }
+        }
+        base = base * 10;
+    }
+    return ret;
+}
