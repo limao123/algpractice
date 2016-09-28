@@ -72,3 +72,10 @@ TEST(BaseKnowledgeTest, findMin) {
     EXPECT_EQ(1, findMin(v7));
      */
 }
+
+TEST(BaseKnowledgeTest,numbersByRecursion) {
+    int ary1[9] = {1,2,3,4,5,6,7,8,9};
+    vector<int> v1(ary1,ary1+9);
+    vector<int> ret1 = numbersByRecursion(1);
+    //EXPECT_EQ(1, findMin(v5));
+}

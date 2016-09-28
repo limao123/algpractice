@@ -20,8 +20,12 @@ using namespace std;
 TreeNode* buildTree(vector<int> &preorder, vector<int> &inorder);
 int countOnes(int num);
 int findMin(vector<int> &num);
+<<<<<<< HEAD
 
 void deleteNode(ListNode *node);
+=======
+vector<int> numbersByRecursion(int n);
+>>>>>>> badcce93bef1c589c722f18dca6fb1d8e27a136c
 class MyQueue {
 public:
     stack<int> stack1;
