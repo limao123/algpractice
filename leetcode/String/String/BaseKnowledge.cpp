@@ -426,3 +426,11 @@ vector<int> numbersByRecursion(int n) {
     }
     return ret;
 }
+
+void deleteNode(ListNode *node) {
+    // write your code here
+    ListNode *temp = node->next;
+    node->next = temp->next;
+    node->val = temp->val;
+    delete temp;
+}
